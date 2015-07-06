@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<style>
+</style>
+		
+	<h:form id="menuForm">
+
+		<rich:panel styleClass="leftPanel columnTop">
+			<f:facet name="header">
+                Main Menu
+            </f:facet>
+			
+			<ul class="list2">
+				<li>
+				  <h:outputLink value="#{facesContext.externalContext.requestContextPath}/mainPublic.jsf">
+				    <h:outputText value="Home" />
+			      </h:outputLink>
+			    </li>
+				<li>
+				   <h:commandLink value="Taxonomic" action="#{taxoBean.startSearch}"/>
+				</li>
+				<li>
+				  <h:commandLink value="DataSet" action="#{dataSetBean.startSearch}"/>
+				</li>
+				<li>
+				  <h:commandLink value="Occurrences" action="#{ocurrencesBean.startSearch}"/>
+				</li>
+				<li>
+				  <h:commandLink value="Species" action="#{speciesBean.startSearch}"/>
+				</li>
+				
+				<li>
+				  <h:outputLink value="#{facesContext.externalContext.requestContextPath}/secure/home.jsf">
+				    <h:outputText value="Admin" />
+			      </h:outputLink>
+			    </li>
+				<li>
+				  <h:outputLink	value="http://www.eubon.eu" target="_blank">
+			        <h:outputText value="EUBON Portal" />
+			      </h:outputLink></li>									
+			</ul>
+		</rich:panel>
+			
+    </h:form>
+	<ui:insert name="ovrCSS" />
+	<!-- Adding all the style sheets here; inorder to get the expected style to be applied -->
+	<h:outputStylesheet name="application.css" library="css" />
+
+</ui:composition>

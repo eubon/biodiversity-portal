@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:rich="http://richfaces.org/rich" xmlns:h="http://java.sun.com/jsf/html" xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml">
+<ui:composition template="/secure/templates/main.xhtml">
+<ui:define name="head">
+<script type="text/javascript" language="javascript" src="#/js/fileupload.js"/>
+</ui:define>
+<ui:define name="body">
+<h:form>
+<rich:tabPanel switchType="client" styleClass="navigation">
+<rich:tab header="Modificación de expediente" mode="client">
+<p class="formulario_t1">Modificación de TipoDocumento</p>
+<h:panelGrid style="width:100%;" id="pgFisica" columns="2" cellspacing="0">
+<h:outputText value="idTipoDocumento:"/>
+<h:inputText value="#{TipoDocumentoCRUDBean.objeto.idTipoDocumento}"/>
+<h:outputText value="nombre:"/>
+<h:inputText value="#{TipoDocumentoCRUDBean.objeto.nombre}"/>
+<h:outputText value="descripcion:"/>
+<h:inputText value="#{TipoDocumentoCRUDBean.objeto.descripcion}"/>
+</h:panelGrid>
+<br/>
+<h:commandButton value="Guardar" action="#{TipoDocumentoCRUDBean.guardar}"/>&#160;&#160;
+<h:commandButton value="Volver" immediate="true" action="#{TipoDocumentoCRUDBean.ver}"/>
+</rich:tab>
+</rich:tabPanel>
+</h:form>
+</ui:define>
+</ui:composition>
+</html>

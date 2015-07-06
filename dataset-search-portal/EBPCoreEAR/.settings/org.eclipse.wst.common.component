@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="EBPCoreEAR">
+        <wb-resource deploy-path="/" source-path="/EarContent"/>
+        <dependent-module archiveName="EBPCoreEAR.ear" deploy-path="/" handle="module:/resource/EBPCoreEAR/EBPCoreEAR">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EBPCoreWeb.war" deploy-path="/" handle="module:/resource/EBPCoreWeb/EBPCoreWeb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EBPCoreBeans.jar" deploy-path="/" handle="module:/resource/EBPCoreBeans/EBPCoreBeans">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EBPCoreDAO.jar" deploy-path="/" handle="module:/resource/EBPCoreDAO/EBPCoreDAO">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EBPCoreEJB.jar" deploy-path="/" handle="module:/resource/EBPCoreEJB/EBPCoreEJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EBPCoreJPA.jar" deploy-path="/" handle="module:/resource/EBPCoreJPA/EBPCoreJPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EBPCoreUtil.jar" deploy-path="/" handle="module:/resource/EBPCoreUtil/EBPCoreUtil">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+
+<a4j:repeat value="#{dataSetBean.dataSet.endpoints}" var="endpoint" rows="50" id="repeatEndpoints">
+
+<p class="formulario_t2"><h:outputText value="#{endpoint.key} "/></p>
+<rich:panel>
+	<h:panelGrid styleClass="tablaCampos"  cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+		<h:outputText value="Key:" />
+		<h:outputText value="#{endpoint.key}" />  
+		<h:outputText value="Type:" />
+		<h:outputText value="#{endpoint.type}" />
+		
+		<h:outputText value="url:" />
+		<h:outputLink value="#{endpoint.url}" target="_blank">Click here...</h:outputLink>
+		</h:panelGrid>
+		
+		<h:panelGrid styleClass="tablaCampos"  cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+        <h:outputText value="Created By:" />
+		<h:outputText value="#{endpoint.createdBy}" />	
+		
+		<h:outputText value="Modified By:" />
+		<h:outputText value="#{endpoint.modifiedBy}" />	
+		
+		<h:outputText value="Created:" />
+		<h:outputText value="#{endpoint.created}" />	
+        
+		<h:outputText value="Modified:" />
+		<h:outputText value="#{endpoint.modified}" />	
+		</h:panelGrid>	
+		
+	</rich:panel>
+</a4j:repeat>
+</ui:composition>

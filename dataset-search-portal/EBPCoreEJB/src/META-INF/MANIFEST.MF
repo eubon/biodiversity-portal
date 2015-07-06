@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Class-Path: 
+ json-simple-1.1.1.jar 
+ jasperreports-5.0.0.jar 
+ commons-digester-1.7.jar 
+ iText-2.1.7.jar 
+ log4j-1.2.13.jar
+ EBPCoreBeans.jar 
+ EBPCoreJPA.jar 
+ EBPCoreUtil.jar 
+ EBPCoreDAO.jar

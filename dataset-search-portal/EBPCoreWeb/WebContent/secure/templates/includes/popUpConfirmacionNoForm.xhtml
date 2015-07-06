@@ -1,0 +1,76 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<script type="text/javascript">
+	function setTexto#{id}(textoAccion){
+		/* var textoHtml = '¿Desea continuar con la acción '+textoAccion+"?"; */
+		document.getElementById("#{rich:clientId('labelAccion'.concat(id))}").innerHTML=textoAccion;
+	}
+	function hide#{id}(){
+		/* alert("confirmation#{id}");
+		RichFaces.$('confirmation#{id}').hide();
+		alert("78967"); */
+		var element_ = document.getElementById("#{rich:clientId('cancel'.concat(id))}");
+		element_.click();
+	}
+	function submitAction#{id}(){
+		var element_ = document.getElementById("#{rich:clientId('submit'.concat(id))}");
+		element_.click();
+	}
+	</script>
+
+	<rich:popupPanel id="confirmation#{id}" modal="true" autosized="true"
+		domElementAttachment="form">
+		<f:facet name="header">
+			<h:outputText value="Confirmation" />
+		</f:facet>
+        <f:facet name="controls">
+            <h:outputLink value="#" onclick="#{rich:component('confirmation'.concat(id))}.hide(); return false;">
+                X
+            </h:outputLink>
+        </f:facet>
+		<div style="max-width: 600px">
+			<table style="width: 100%">
+				<tr>
+					<td colspan="2" align="center"><div id="labelAccion#{id}">
+							<h:outputText value="#{textoConfirmacion}"></h:outputText>
+						</div></td>
+				</tr>
+				<tr>
+					<td width="50%" align="left">
+						<button id="confirmCancelar" onclick="hide#{id}();return false" type="button">Cancel</button>
+						<br /><h:commandButton value="Cancelar" immediate="true"
+							id="cancel#{id}" style="display:none">
+							<rich:componentControl target="confirmation#{id}"
+								operation="hide" />
+						</h:commandButton>
+					</td>
+					<td width="50%" align="right"><button type="button"
+							id="confirmSubmit" onclick="submitAction#{id}();">Confirm</button> <br />
+						<h:commandButton value="Confirmar" id="submit#{id}"
+							action="#{bean[action]}" style="display:none">
+						</h:commandButton></td>
+				</tr>
+				<a4j:outputPanel rendered="#{observaciones}">
+					<tr>
+						<td colspan="2">
+							<h:outputLabel
+								value="Observaciones" for="txtObservaciones#{id}"></h:outputLabel>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><h:inputTextarea cols="60"
+								rows="4" id="txtObservaciones#{id}"
+								value="#{textoObservaciones}">
+								<a4j:ajax event="valueChange"></a4j:ajax>
+							</h:inputTextarea> <!-- </h:panelGrid> --></td>
+					</tr>
+				</a4j:outputPanel>
+			</table>
+		</div>
+	</rich:popupPanel>
+</ui:composition>

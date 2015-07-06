@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:rich="http://richfaces.org/rich" xmlns:h="http://java.sun.com/jsf/html" xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml">
+<ui:composition template="/secure/templates/main.xhtml">
+<ui:define name="head">
+<script type="text/javascript" language="javascript" src="#/js/fileupload.js"/>
+</ui:define>
+<ui:define name="body">
+<h:form>
+<rich:tabPanel switchType="client" styleClass="navigation">
+<rich:tab header="Consulta de expediente" mode="client">
+<p class="formulario_t1">Consulta de Expediente</p>
+<h:panelGrid style="width:100%;" id="pgCampos" columns="2" cellspacing="0">
+<h:outputText value="idExpediente:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.idExpediente}"/>
+<h:outputText value="idProcedimiento:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.idProcedimiento}"/>
+<h:outputText value="nombre:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.nombre}"/>
+<h:outputText value="apellidos:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.apellidos}"/>
+<h:outputText value="NIF:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.NIF}"/>
+<h:outputText value="pais:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.pais}"/>
+<h:outputText value="domicilioCalle:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.domicilioCalle}"/>
+<h:outputText value="domicilioLocalidad:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.domicilioLocalidad}"/>
+<h:outputText value="domicilioNumero:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.domicilioNumero}"/>
+<h:outputText value="domicilioCP:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.domicilioCP}"/>
+<h:outputText value="representanteNombre:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.representanteNombre}"/>
+<h:outputText value="representanteApellidos:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.representanteApellidos}"/>
+<h:outputText value="representanteNIF:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.representanteNIF}"/>
+<h:outputText value="fecha:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.fecha}">
+<f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" timeZone="CET"/>
+</h:outputText>
+<h:outputText value="tipoPersona:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.tipoPersona}"/>
+<h:outputText value="capitalSocial:"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.capitalSocial}"/>
+</h:panelGrid>
+<br/>
+<h:outputText value="Relaciones:"/>
+<br/>
+<h:outputText value="estado: "/>
+<h:commandLink action="#{EstadoCRUDBean.consulta}">
+<f:param name="id" value="#{ExpedienteCRUDBean.objeto.estado.idEstado}"/>
+<h:outputText value="#{ExpedienteCRUDBean.objeto.estado.idEstado}"/>
+</h:commandLink>
+<br/>
+<br/>
+<h:outputText value="estados:"/>
+<br/>
+<rich:dataTable value="#{ExpedienteCRUDBean.objeto.estados}" var="objeto" rowClasses="odd-row, even-row" styleClass="stable">
+<rich:column>
+<f:facet name="header">
+<h:outputText value="Id"/>
+</f:facet>
+<h:commandLink action="#{EstadoExpedienteCRUDBean.consulta}">
+<f:param name="id" value="#{objeto.idEstadoExpediente}"/>
+<h:outputText value="#{objeto.idEstadoExpediente}"/>
+</h:commandLink>
+</rich:column>
+</rich:dataTable>
+<br/>
+<br/>
+<h:outputText value="notificaciones:"/>
+<br/>
+<rich:dataTable value="#{ExpedienteCRUDBean.objeto.notificaciones}" var="objeto" rowClasses="odd-row, even-row" styleClass="stable">
+<rich:column>
+<f:facet name="header">
+<h:outputText value="Id"/>
+</f:facet>
+<h:commandLink action="#{NotificacionCRUDBean.consulta}">
+<f:param name="id" value="#{objeto.idNotificacion}"/>
+<h:outputText value="#{objeto.idNotificacion}"/>
+</h:commandLink>
+</rich:column>
+</rich:dataTable>
+<br/>
+<br/>
+<h:outputText value="documentos:"/>
+<br/>
+<rich:dataTable value="#{ExpedienteCRUDBean.objeto.documentos}" var="objeto" rowClasses="odd-row, even-row" styleClass="stable">
+<rich:column>
+<f:facet name="header">
+<h:outputText value="Id"/>
+</f:facet>
+<h:commandLink action="#{DocumentoCRUDBean.consulta}">
+<f:param name="id" value="#{objeto.idDocumento}"/>
+<h:outputText value="#{objeto.idDocumento}"/>
+</h:commandLink>
+</rich:column>
+</rich:dataTable>
+<br/>
+<br/>
+<br/>
+<h:commandButton value="Modificar" action="#{ExpedienteCRUDBean.modificar}"/>&#160;&#160;
+<h:commandButton value="Volver" immediate="true" action="#{ExpedienteCRUDBean.listado}"/>
+</rich:tab>
+</rich:tabPanel>
+</h:form>
+</ui:define>
+</ui:composition>
+</html>

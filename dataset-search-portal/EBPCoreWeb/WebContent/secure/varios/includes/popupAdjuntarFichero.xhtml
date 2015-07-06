@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<rich:popupPanel id="mpAdjuntarFichero" autosized="true">
+		<f:facet name="header">
+			<h:outputText value="Adjuntar Fichero" />
+		</f:facet>
+	
+		<f:facet name="controls">
+		</f:facet>
+		
+		<h:form id="mpAdjuntarFicheroform">
+			<h:messages styleClass="message" globalOnly="true" />
+			<br/>
+			
+			<rich:fileUpload id="fuDocumento" fileUploadListener="#{fileUploadListener.listener}"
+				addLabel="Añadir" clearAllLabel="Eliminar todos" clearLabel=" " 
+				deleteLabel="Borrar" doneLabel="Hecho" serverErrorLabel="Error de servidor"
+				sizeExceededLabel="Tamaño de fichero excesivo" uploadLabel="Subir"
+			/>
+	
+			<br/>
+			<br/>
+			
+			<center>
+				<a4j:commandButton id="mpAdjuntarFicheroAceptar"
+					styleClass="actionButtons" value="Aceptar"
+					style="width:100px;" action="#{fileUploadListener.asignarFichero}"
+					render="pgDocumentacion"
+					onclick="#{rich:component('mpAdjuntarFichero')}.hide()"
+					immediate="true"
+				>
+				</a4j:commandButton>
+				
+				&#160;&#160;&#160;&#160;&#160;&#160; 
+				<a4j:commandButton
+					id="mpAdjuntarFicheroCancelar" styleClass="actionButtons" value="Cancelar"
+					style="width:100px;" 
+					render="mpAdjuntarFichero"
+					onclick="#{rich:component('mpAdjuntarFichero')}.hide()"
+					/>
+					
+			</center>
+		</h:form>
+	</rich:popupPanel>
+		
+</ui:composition>

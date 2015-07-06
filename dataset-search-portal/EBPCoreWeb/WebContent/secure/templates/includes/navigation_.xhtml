@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<style>	
+.rf-pm-top-gr-gr {
+	width:75%;
+}
+</style>
+	<h:form id="frmMenu">
+		<rich:panelMenu style="width:200px" id="pmMenu" binding="#{menuBean.menu}"/>
+		<div id="divShowMenu" style="display:none;width:43px;background-image: url('${request.contextPath}/images/pmenu_bg.png'); border-color: #C4C0B9; height:28px;border-style: solid; border-width: 1px;">
+               	<a
+               		onclick="document.getElementById('divShowMenu').style.display='none';document.getElementById('frmMenu:pmMenu').style.display='block';document.getElementById('divContent').style.marginLeft = '210px'"
+               		style="cursor:pointer; float:right;  padding: 2px 10px 3px; color: #000000; border-color: #C4C0C9; border-style: solid; border-width: 0px; margin-right: 4px; margin-top: 2px;">
+               		<h:graphicImage value="/images/gt.png"></h:graphicImage>
+               	</a>
+		</div>
+	</h:form>
+</ui:composition>

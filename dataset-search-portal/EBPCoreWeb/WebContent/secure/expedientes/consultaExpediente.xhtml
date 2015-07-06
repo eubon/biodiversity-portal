@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+	>
+<ui:composition template="/secure/templates/main.xhtml">
+	<ui:define name="head">
+		<script type="text/javascript" language="javascript" src="#{request.contextPath}/js/fileupload.js"></script>	
+	</ui:define>
+	<ui:define name="body">
+		<style type="text/css">
+		.colStyle1 { 
+			width: 25%;
+			padding: 3px;
+			background-color: #D8E3F1;
+		}
+		.colStyle2 { 
+			width: 75%;
+			padding: 3px;
+		}
+		.colStyle11 { 
+			width: 12.5%;
+			padding: 3px;
+			background-color: #D8E3F1;
+		}
+		.colStyle12 { 
+			width: 37.5%;
+			padding: 3px;
+		}
+		.col1 { 
+			vertical-align: top;
+			padding: 0px;
+			width: 50%;
+		}
+		.colStyle21 { 
+			width: 25%;
+		}
+		</style>	
+		<rich:tabPanel switchType="client" styleClass="navigation">
+				<rich:tab header="Consulta de expediente" mode="client">
+					<p class="formulario_t1">Consulta de expediente</p>
+					<p class="formulario_t2">Expediente de carácter general</p>
+					<h:form>
+						<h:messages globalOnly="true"/>
+						<p class="formulario_t3">Titular:</p>
+						
+						<h:panelGrid style="width:100%; border: 1px solid #DDDDDD;" cellspacing="0" columns="3" columnClasses="col1,col1,col1">
+							<h:panelGrid style="width:100%;" id="pgFisica" columns="2" cellspacing="0" columnClasses="colStyle1,colStyle2">
+		                        <h:outputText value="Nombre:" />
+		                         <h:outputText value="#{expedienteBean.expediente.nombre}"/>
+		                        <h:outputText value="Apellidos:" />
+		                        <h:outputText value="#{expedienteBean.expediente.apellidos}"/>
+		                        <h:outputText value="NIF:" />
+		                        <h:outputText value="#{expedienteBean.expediente.NIF}"/>
+							</h:panelGrid>
+							<h:panelGrid style="width:100%;" columns="2" cellspacing="0" columnClasses="colStyle1,colStyle2">
+		                        <h:outputText value="País:" />
+		                        <h:outputText value="#{expedienteBean.expediente.pais}"/>
+		                    </h:panelGrid>
+		                </h:panelGrid>
+						
+						<p class="formulario_t3">Representante:</p>
+						<h:panelGrid style="width:50%; border: 1px solid #DDDDDD;" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+	                        <h:outputText value="Nombre:" />
+	                        <h:outputText value="#{expedienteBean.expediente.representanteNombre}"/>
+
+	                        <h:outputText value="Apellidos:" />
+	                        <h:outputText value="#{expedienteBean.expediente.representanteApellidos}"/>
+							
+	                        <h:outputText value="NIF:" />
+	                        <h:outputText value="#{expedienteBean.expediente.representanteNIF}"/>
+	                    </h:panelGrid>
+	                    
+	                    <p class="formulario_t3">Domicilio de notificaciones:</p>
+						<h:panelGrid style="width:100%; border: 1px solid #DDDDDD;" cellspacing="0" columnClasses="colStyle11,colStyle12,colStyle11,colStyle12" columns="4" >
+	                        <h:outputText value="Calle:" />
+	                        <h:outputText value="#{expedienteBean.expediente.domicilioCalle}"/>
+	                        <h:outputText value="Número:" />
+	                        <h:outputText value="#{expedienteBean.expediente.domicilioNumero}"/>
+
+	                        <h:outputText value="Localidad:" />
+	                        <h:outputText value="#{expedienteBean.expediente.domicilioLocalidad}"/>
+	                        <h:outputText value="CP:" />
+	                        <h:outputText value="#{expedienteBean.expediente.domicilioCP}"/>
+	                    </h:panelGrid>
+
+						<p class="formulario_t3">
+							Capital social:
+						</p>	 
+						<h:panelGrid style="width:50%; border: 1px solid #DDDDDD;" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+	                        <h:outputText value="Capital:"/>
+	                        <h:column>
+		                        <h:outputText value="#{expedienteBean.expediente.capitalSocial}">
+	                        		<f:convertNumber type="number" locale="es" pattern="#,##0"/>
+	                        	</h:outputText> €                    	
+	                        </h:column>
+	                    </h:panelGrid>						                   	
+
+						<p class="formulario_t3">
+							Estado del expediente:
+						</p>	 
+						<h:panelGrid style="width:50%; border: 1px solid #DDDDDD;" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+	                        <h:outputText value="Estado actual:"/>
+	                        <h:outputText value="#{expedienteBean.expediente.estado.nombre}"/>
+	                    </h:panelGrid>	
+	                    
+	                    <br/>
+						
+						<h:panelGrid style="width:50%;" rendered="#{not empty expedienteBean.transiciones}" columnClasses="colStyle21" columns="4">
+							<h:column/>
+							<h:outputText value="Nuevo estado:" />
+							<h:selectOneMenu value="#{expedienteBean.idTransicion}">
+								<f:selectItems value="#{expedienteBean.transiciones}"/>
+							</h:selectOneMenu>
+							<h:commandButton value="Cambiar" action="#{expedienteBean.ejecutarAccion}"/>
+						</h:panelGrid>
+						<br />
+						<h:commandButton value="Volver" action="#{expedienteBean.listadoExpedientes}"/> &nbsp;
+						<h:commandButton value="Modificar expediente" action="#{expedienteBean.modificarExpediente}"/> 
+					</h:form>
+				</rich:tab>
+				<rich:tab header="Historial" mode="client">
+					<p class="formulario_t1">Historial del expediente</p>
+					<p class="formulario_t2">Expediente de carácter general</p>
+					
+					<ui:include src="/secure/expedientes/includes/historial.xhtml" />
+				</rich:tab>
+				
+				<rich:tab header="Documentación" mode="client">
+					<h:form>
+					<p class="formulario_t1">Documentación del expediente</p>
+					<p class="formulario_t2">Expediente de carácter general</p>
+					
+						<rich:dataTable value="#{expedienteBean.expediente.documentos}" var="documento"
+							id="table" rowClasses="odd-row, even-row" 
+							styleClass="stable"
+							style="width:100%" 
+							rows="15"
+							>
+				           <rich:column>
+				                <f:facet name="header">
+			                    	<h:outputText value="Nombre fichero" />
+				                </f:facet>				                
+		                    	<h:outputText value="#{documento.nombreFichero}" />
+							</rich:column>
+				           <rich:column>
+				                <f:facet name="header">
+			                    	<h:outputText value="Tipo documento" />
+				                </f:facet>				                
+		                    	<h:outputText value="#{documento.tipoDocumento.descripcion}" />
+							</rich:column>
+				           <rich:column>
+				                <f:facet name="header">
+			                    	<h:outputText value="Fecha" />
+				                </f:facet>				                
+		                    	<h:outputText value="#{documento.fecha}" >
+			                    	<f:convertDateTime type="date" pattern="dd/MM/yyyy" timeZone="GMT+2"/>
+		                    	</h:outputText>
+							</rich:column>
+				           <rich:column>
+				                <f:facet name="header">
+			                    	<h:outputText value="" />
+				                </f:facet>				                
+		                        <h:commandLink action="#{expedienteBean.descargarDocumento}">
+		                        	<f:param name="idDocumento" value="#{documento.idDocumento}"></f:param>
+		                        	<h:outputText value="Descargar" />
+	                        	</h:commandLink>
+							</rich:column>
+						</rich:dataTable>					
+						<br/>
+						<br/>
+						Informe del expediente:&nbsp;&nbsp;&nbsp;
+	                       <h:commandLink action="#{expedienteBean.descargarInforme}" target="_blank">
+	                        	<h:outputText value="Descargar" />
+                        	</h:commandLink>
+                        	
+		<br/>
+				<h:panelGroup id="pgDocumentacion">
+		<rich:dataTable columns="2" id="dtDocumentacion1" style="width:100%;border-width: 0px;" value="#{expedienteBean.documentacion}" var="documento">
+			<h:column style="border-width: 0px;">
+				<h:outputText value="(#{documento.fichero.name})" />
+			</h:column>
+			<h:column style="border-width: 0px;">
+			
+				<h:selectOneMenu value="#{documento.tipo}">
+					<f:ajax event="change" inmediate="true"></f:ajax>
+					<f:selectItems value="#{expedienteBean.tiposDocumentoBean.tipos}"></f:selectItems>
+				</h:selectOneMenu>
+			</h:column>				
+		</rich:dataTable>		
+				</h:panelGroup>
+		
+		<br/>
+		<h:commandButton value="Adjuntar documento" action="#{fileUploadListener.asignarListener}"> 
+			<a4j:param assignTo="#{fileUploadListener.listener}" value="expedienteBean.documentacionUploadListener"/>
+			<f:ajax />
+			<rich:componentControl target="mpAdjuntarFichero" operation="show" />
+		</h:commandButton>
+		<br/><br/>
+		<h:commandButton value="Guardar documentos" action="#{expedienteBean.guardarDocumentacion}"/>&#160;
+		
+		                        
+					</h:form>
+				</rich:tab>				
+		</rich:tabPanel>
+		<ui:include src="/secure/varios/includes/popupAdjuntarFichero.xhtml" />
+	</ui:define>
+</ui:composition>
+</html>

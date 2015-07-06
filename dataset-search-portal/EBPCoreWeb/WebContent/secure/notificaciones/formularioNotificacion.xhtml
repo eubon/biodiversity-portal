@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+	>
+<ui:composition template="/secure/templates/main.xhtml">
+	<ui:define name="head">
+		<script type="text/javascript" language="javascript" src="#{request.contextPath}/js/fileupload.js"></script>	
+	</ui:define>
+	<ui:define name="body">
+		<style type="text/css">
+		.colStyle1 { 
+			width: 25%;
+			padding: 3px;
+			background-color: #D8E3F1;
+		}
+		.colStyle2 { 
+			width: 75%;
+			padding: 3px;
+		}
+		.colStyle11 { 
+			width: 12.5%;
+			padding: 3px;
+			background-color: #D8E3F1;
+		}
+		.colStyle12 { 
+			width: 37.5%;
+			padding: 3px;
+		}
+		.col1 { 
+			vertical-align: top;
+			padding: 0px;
+			width: 50%;
+		}
+		.colStyle21 { 
+			width: 25%;
+		}
+		</style>	
+		<h:form name="frmAccion">
+		<rich:tabPanel id="tpAccion" switchType="client" styleClass="navigation">
+				<rich:tab header="Consulta de expediente" mode="client">
+					<p class="formulario_t1">Enviar notificación</p>
+						<h:messages globalOnly="true"/>
+	                    <p class="formulario_t3">Asunto:</p>
+	                    <h:inputText value="#{notificacionBean.motivo}"/>
+	                    <p class="formulario_t3">Texto:</p>
+	                    <h:inputTextarea style="width: 400px; height: 60px;" value="#{notificacionBean.justificacion}">
+	                    </h:inputTextarea>
+						<br/>
+						
+						<h:panelGroup id="pgDocumentacion">
+						<h:outputText id="otFichero" rendered="#{notificacionBean.documento!=null}" value="(#{notificacionBean.documento.name})" />
+						</h:panelGroup>
+						<br/>
+						<br/>
+								<a4j:commandButton rendered="#{notificacionBean.documento==null}" value="Adjuntar documento" action="#{fileUploadListener.asignarListener}"
+									oncomplete="#{rich:component('mpAdjuntarFichero')}.show()"
+								> 
+									<a4j:param assignTo="#{fileUploadListener.listener}" value="notificacionBean.documentoUploadListener"/>
+								</a4j:commandButton>
+						<h:commandButton render="tpAccion" rendered="#{notificacionBean.documento!=null}" value="Eliminar documento" actionListener="#{notificacionBean.eliminarDocumento}"> 
+						</h:commandButton>						
+						
+						<br/>
+						<br/>
+						
+						<h:commandButton value="Aceptar" action="#{notificacionBean.notificar}"> 
+						</h:commandButton>&nbsp;
+						<h:commandButton value="Volver" action="#{expedienteBean.verExpediente}"/> 
+				</rich:tab>
+			</rich:tabPanel>
+		</h:form>
+			
+		<ui:include src="/secure/varios/includes/popupAdjuntarFichero.xhtml" />
+		
+	</ui:define>
+</ui:composition>
+</html>

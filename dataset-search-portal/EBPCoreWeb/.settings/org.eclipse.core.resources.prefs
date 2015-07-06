@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/PESI/v0_5/Distribution.java=UTF-8
+encoding//src/PESI/v0_5/PESINameService.java=UTF-8
+encoding//src/PESI/v0_5/PESINameServiceBindingStub.java=UTF-8
+encoding//src/PESI/v0_5/PESINameServiceLocator.java=UTF-8
+encoding//src/PESI/v0_5/PESINameServicePortType.java=UTF-8
+encoding//src/PESI/v0_5/PESIRecord.java=UTF-8
+encoding//src/PESI/v0_5/Vernacular.java=UTF-8
+encoding//src/aphia/v1_0/AphiaNameService.java=UTF-8
+encoding//src/aphia/v1_0/AphiaNameServiceBindingStub.java=UTF-8
+encoding//src/aphia/v1_0/AphiaNameServiceLocator.java=UTF-8
+encoding//src/aphia/v1_0/AphiaNameServicePortType.java=UTF-8
+encoding//src/aphia/v1_0/AphiaRecord.java=UTF-8
+encoding//src/aphia/v1_0/Classification.java=UTF-8
+encoding//src/aphia/v1_0/Source.java=UTF-8
+encoding//src/aphia/v1_0/Vernacular.java=UTF-8

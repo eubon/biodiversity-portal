@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+<f:view contentType="text/html">
+<h:head>
+<title>EUBON - European Biodiversity Portal</title>
+<ui:insert name="head"/>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+</h:head>
+<h:body>
+   <div id="page">
+      <div id="header">
+            <div class="title">
+              <div class="logo">
+                  <img border="0" src="#{facesContext.externalContext.requestContextPath}/images/eubon.jpg" alt="European Biodiversity Portal" title="European Biodiversity Portal"/>
+              </div>
+              <div class="texto-usuario">
+		          European Biodiversity Portal
+		      </div>
+            </div>
+       
+        </div>
+        <div id="page-content">
+       	<rich:dataTable rendered="false"/>
+       	<rich:tabPanel rendered="false"/>
+       	<rich:panelMenu rendered="false"/>
+            <div class="left-menu">
+				<ui:include src="/menu/menu.xhtml" />
+				<ui:include src="/secure/menu/menuAdmin.xhtml" />
+            </div>
+            <div class="content-container">
+                <div id="mensajesTemplate">
+						<rich:messages showDetail="false" />
+					</div>
+				<ui:insert name="body">
+				     	Body no encontrado
+				</ui:insert>
+            </div>
+            <div class="clear"></div>
+        </div>
+		<div id="footer">EUBON &bull; European Biodiversity Portal &copy; 2014 - 2015</div>
+		</div>
+		
+		<ui:insert name="ovrCSS" />
+		<!-- Adding all the style sheets here; inorder to get the expected style to be applied -->
+		<h:outputStylesheet name="application.css" library="css" />
+</h:body> 
+</f:view>
+</html>

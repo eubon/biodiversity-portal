@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="/secure/templates/main.xhtml">
+	<ui:define name="body">
+		<rich:tabPanel switchType="client" styleClass="navigation">
+				<rich:tab header="Listado de expedientes" >
+					<h:form id="fParametrosSistema">
+						<h:messages id="ParametrosSistemaMensajes" globalOnly="true" styleClass="message"/>
+						
+							<rich:dataTable id="dtConfiguracion" value="#{adminBean.configuracion}"	var="conf" 
+								width="100%" columns="4" border="0" rowKeyVar="row" columnsWidth="0%,50%,50%,0%">
+							
+								<rich:column style="text-align:left" >
+									<f:facet name="header">
+										<h:outputText value="Clave"/>
+									</f:facet>
+									<h:outputText value="#{conf.clave}"  />
+								</rich:column>
+						
+								<rich:column style="text-align:left" >
+									<f:facet name="header">
+										<h:outputText value="Descripción"/>
+									</f:facet>
+									<h:inputText style="width: 100%" value="#{conf.descripcion}"  />
+								</rich:column>
+							
+								<rich:column>
+									<f:facet name="header">
+										<h:outputText value="Valor"/>
+									</f:facet>
+									<h:inputText style="width: 100%" value="#{conf.valor}"  />
+								</rich:column>
+							
+								
+								<rich:column>
+									<f:facet name="header">
+										<h:outputText value=""/>
+									</f:facet>		
+									<h:commandLink action="#{adminBean.seleccionarBorrarPropiedad}">
+										<a4j:param value="#{row}" assignTo="#{adminBean.propiedadABorrar}"/>
+										<f:ajax/>
+										<h:graphicImage value="/images/delete_16.png" style="border:0"/>
+										<rich:componentControl target="mpEliminarConfiguracion" operation="show" />
+									</h:commandLink>
+								</rich:column>
+							</rich:dataTable>
+							<br/>
+							<h:commandButton styleClass="actionButtons"
+									value="Aceptar" action="#{adminBean.establecerParametros}"
+									style="width:100px;" render="fParametrosSistema">
+							</h:commandButton>
+						</h:form>
+						<h:form>
+							<br/><br/><br/>
+							Nueva propiedad de configuración
+							<br/>
+							Clave 
+								<h:inputText id="nuevaPropiedadClave" style="width:25%;" required="true" value="#{adminBean.nuevaPropiedadClave}"  />
+								&nbsp;<h:message styleClass="message" for="nuevaPropiedadClave"/>
+							<br/>
+							Descripcion <h:inputText style="width:25%;" value="#{adminBean.nuevaPropiedadDescripcion}"  />
+							<br/><br/>
+							<h:commandButton styleClass="actionButtons"
+									value="Aceptar" action="#{adminBean.crearNuevaPropiedad}"
+									style="width:100px;" render="fParametrosSistema">
+							</h:commandButton>
+						</h:form>
+							
+						
+						<rich:popupPanel id="mpEliminarConfiguracion" width="300" autosized="true" left="150">
+							<f:facet name="header">
+								<h:outputText value="Eliminar Configuración" />
+							</f:facet>
+						
+							<f:facet name="controls">
+								<h:graphicImage value="../img/close_16.png" style="cursor:pointer"
+									onclick="javascript:Richfaces.hideModalPanel('mpEliminarConfiguracion');" 
+								/>
+							</f:facet>
+							
+							<h:form id="mpEliminarConfiguracionform">
+								<h:messages styleClass="message" globalOnly="true" />
+								<br/>
+								<h:outputLabel value="¿Está seguro de que desea eliminar la propiedad de configuración?"
+									style="font-size:11px;" />
+						
+								<br/>
+								<br/>
+								
+								<center>
+									<h:commandButton id="eliminarConfiguracionAceptar"
+										styleClass="actionButtons" value="Aceptar"
+										action="#{adminBean.borrarPropiedad}"
+										style="width:100px;"
+										/>
+									
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+									<a4j:commandButton
+										id="eliminarConfiguracionCancelar" styleClass="actionButtons" value="Cancelar"
+										onclick="#{rich:component('mpEliminarConfiguracion')}.hide()"
+										style="width:100px;" />
+								</center>
+							</h:form>
+						</rich:popupPanel>
+				</rich:tab>
+		</rich:tabPanel> 
+	</ui:define>
+</ui:composition>
+
+</html>

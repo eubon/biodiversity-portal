@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	<rich:collapsiblePanel header="DataSet Filter" switchType="client">
+
+<h:panelGrid styleClass="tablaCampos" id="content" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+					
+	<h:outputText value="q:" />
+		<h:inputText value="#{dataSetBean.dataSetFilter.q}">
+	    </h:inputText>	   
+	   
+	   
+	<h:outputText value="Publishing Country:" />
+	    <rich:select enableManualInput="true" defaultLabel="Any" value="#{dataSetBean.dataSetFilter.publishingCountry}">
+		  <f:selectItems value="#{dataSetBean.countryList}" var="_country" itemValue="#{_country.code}" itemLabel="#{_country.name}"/>
+        </rich:select>
+	     
+	<h:outputText value="DataSet Type:" />
+		<h:selectOneMenu value="#{dataSetBean.dataSetFilter.type}" label="dataSetTypeSelect">
+	      <f:selectItem itemLabel="any" itemValue="" />
+	      <f:selectItem itemLabel="CHECKLIST" itemValue="CHECKLIST" />
+	      <f:selectItem itemLabel="METADATA" itemValue="METADATA" />
+	      <f:selectItem itemLabel="OCCURRENCE" itemValue="OCCURRENCE" />
+	    </h:selectOneMenu>  
+
+	<h:outputText value="Keyword:" />
+		<h:inputText value="#{dataSetBean.dataSetFilter.keyword}">
+	    </h:inputText>
+
+	<h:outputText value="Continent:" />
+		<h:selectOneMenu value="#{dataSetBean.dataSetFilter.continent}" label="ContinentSelect">
+	      <f:selectItem itemLabel="any" itemValue="" />
+	      <f:selectItem itemLabel="AFRICA" itemValue="AFRICA" />
+	      <f:selectItem itemLabel="ANTARCTICA" itemValue="ANTARCTICA" />
+	      <f:selectItem itemLabel="ASIA" itemValue="ASIA" />
+	      <f:selectItem itemLabel="EUROPE" itemValue="EUROPE" />
+	      <f:selectItem itemLabel="NORTH_AMERICA" itemValue="NORTH_AMERICA" />
+	      <f:selectItem itemLabel="OCEANIA" itemValue="OCEANIA" />
+	      <f:selectItem itemLabel="SOUTH_AMERICA" itemValue="SOUTH_AMERICA" />
+	    </h:selectOneMenu> 
+	    
+	<h:outputText value="DataSet Service:" />
+	    <h:selectOneMenu value="#{dataSetBean.provider}" label="providerSelect">
+		  <f:selectItems value="#{dataSetBean.providerList}" var="_provider" itemValue="#{_provider.id}" itemLabel="#{_provider.name}"/>
+        </h:selectOneMenu> 
+	
+</h:panelGrid>
+<br/>
+	<h:commandButton value="Search DataSets" action="#{dataSetBean.dataSetSearch}"/>&#160;&#160;
+	
+	</rich:collapsiblePanel>
+</ui:composition>

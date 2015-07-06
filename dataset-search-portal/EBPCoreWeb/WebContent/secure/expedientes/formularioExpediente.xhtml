@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+	>
+<ui:composition template="/secure/templates/main.xhtml">
+	<ui:define name="head">
+		<script type="text/javascript" language="javascript" src="#{request.contextPath}/js/fileupload.js"></script>	
+	</ui:define>
+	<ui:define name="body">
+		<style type="text/css">
+		.colStyle1 { 
+			width: 25%;
+			padding: 3px;
+			background-color: #D8E3F1;
+		}
+		.colStyle2 { 
+			width: 75%;
+			padding: 3px;
+		}
+		.colStyle11 { 
+			width: 12.5%;
+			padding: 3px;
+			background-color: #D8E3F1;
+		}
+		.colStyle12 { 
+			width: 37.5%;
+			padding: 3px;
+		}
+		.col1 { 
+			vertical-align: top;
+			padding: 0px;
+			width: 50%;
+		}
+		.colStyle21 { 
+			width: 25%;
+		}
+		</style>	
+		<rich:tabPanel switchType="client" styleClass="navigation">
+				<rich:tab header="Modificación de expediente" mode="client">
+					<p class="formulario_t1">Modificación de los datos del Expediente</p>
+					
+					<p class="formulario_t2">Expediente de carácter general</p>
+					<h:form>
+						<h:messages globalOnly="true"/>
+						<p class="formulario_t3">Titular:</p>
+						
+						<h:panelGrid style="width:100%; border: 1px solid #DDDDDD;" cellspacing="0" columns="3" columnClasses="col1,col1,col1">
+							<h:panelGrid style="width:100%;" id="pgFisica" columns="2" cellspacing="0" columnClasses="colStyle1,colStyle2">
+		                        <h:outputText value="Nombre:" />
+		                         <h:inputText value="#{expedienteBean.expediente.nombre}"/>
+		                        <h:outputText value="Apellidos:" />
+		                        <h:inputText value="#{expedienteBean.expediente.apellidos}"/>
+		                        <h:outputText value="NIF:" />
+		                        <h:inputText value="#{expedienteBean.expediente.NIF}"/>
+							</h:panelGrid>
+							<h:panelGrid style="width:100%;" columns="2" cellspacing="0" columnClasses="colStyle1,colStyle2">
+		                        <h:outputText value="País:" />
+		                        <h:inputText value="#{expedienteBean.expediente.pais}"/>
+		                    </h:panelGrid>
+		                </h:panelGrid>
+						
+						<p class="formulario_t3">Representante:</p>
+						<h:panelGrid style="width:50%; border: 1px solid #DDDDDD;" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+	                        <h:outputText value="Nombre:" />
+	                        <h:inputText value="#{expedienteBean.expediente.representanteNombre}"/>
+
+	                        <h:outputText value="Apellidos:" />
+	                        <h:inputText value="#{expedienteBean.expediente.representanteApellidos}"/>
+							
+	                        <h:outputText value="NIF:" />
+	                        <h:inputText value="#{expedienteBean.expediente.representanteNIF}"/>
+	                    </h:panelGrid>
+	                    
+	                    <p class="formulario_t3">Domicilio de notificaciones:</p>
+						<h:panelGrid style="width:100%; border: 1px solid #DDDDDD;" cellspacing="0" columnClasses="colStyle11,colStyle12,colStyle11,colStyle12" columns="4" >
+	                        <h:outputText value="Calle:" />
+	                        <h:inputText value="#{expedienteBean.expediente.domicilioCalle}"/>
+	                        <h:outputText value="Número:" />
+	                        <h:inputText value="#{expedienteBean.expediente.domicilioNumero}"/>
+
+	                        <h:outputText value="Localidad:" />
+	                        <h:inputText value="#{expedienteBean.expediente.domicilioLocalidad}"/>
+	                        <h:outputText value="CP:" />
+	                        <h:inputText value="#{expedienteBean.expediente.domicilioCP}"/>
+	                    </h:panelGrid>
+
+						<p class="formulario_t3">
+							Capital social:
+						</p>	 
+						<h:panelGrid style="width:50%; border: 1px solid #DDDDDD;" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+	                        <h:outputText value="Capital:"/>
+	                        <h:column>
+		                        <h:inputText value="#{expedienteBean.expediente.capitalSocial}">
+	                        	</h:inputText> €                    	
+	                        </h:column>
+	                    </h:panelGrid>						   
+	                    <br/>               
+	                    <h:commandButton value="Volver" action="#{expedienteBean.refrescarExpediente}"/> &nbsp; 	
+			            <h:commandButton action="#{expedienteBean.guardarExpediente}" value="Guardar expediente"/>
+					</h:form>
+				</rich:tab>
+			</rich:tabPanel>
+	</ui:define>
+</ui:composition>
+</html>

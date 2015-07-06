@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13027925539600" configfile="/EBPCoreWeb/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="2674" id="pf130382890011615" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13039170745571 pf13046652617130 pf13046652617131 pf13046652773454 pf13073628433370 pf14132167107481 pf14132362570111 pf14132362570112 pf14132364596386 pf14133960436760 pf14133960436761 pf14133960436762 pf14133960436763 pf14147690524480 pf14147690524482 pf14147690524483 pf14147695859418 pf14169402510780 pf14174294329260 pf14174294329261 pf14174294329262 pf14174294329263 pf14174303072598 pf14174303072599 pf141743030725910 pf141743030725911 pf14187317927180 pf14187317927181 pf14187317927182 pf14187317927183 pf14199328235270 pf14199335506112 pf14199365802594 pf14199379799580 pf14204742804840 pf14204742804841 pf14204742804842 pf14204742804843 pf14204801250078 pf14231323033000" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/seguridad/main.xhtml" x="338" y="562" id="pf13039170745573" referenceLink="//@navigationRule.0/@navigationCase.22/@toViewId|" inlinks="pf13039170745571" path="/secure/seguridad/main.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/cache/main.xhtml" x="338" y="946" id="pf13046652617132" referenceLink="//@navigationRule.0/@navigationCase.21/@toViewId|" inlinks="pf13046652617130" path="/secure/cache/main.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/admin/variablesConfiguracion.xhtml" x="338" y="1330" id="pf13046652617143" referenceLink="//@navigationRule.0/@navigationCase.23/@toViewId|" inlinks="pf13046652617131" path="/secure/admin/variablesConfiguracion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/admin/panelControl.xhtml" x="338" y="1714" id="pf13046652773465" referenceLink="//@navigationRule.0/@navigationCase.24/@toViewId|" inlinks="pf13046652773454" path="/secure/admin/panelControl.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/varios/mensaje.xhtml" x="338" y="2098" id="pf13073628433381" referenceLink="//@navigationRule.0/@navigationCase.25/@toViewId|" inlinks="pf13073628433370" path="/secure/varios/mensaje.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/category/category.xhtml" id="pf14132167107485" referenceLink="//@navigationRule.0/@navigationCase.27/@toViewId|" inlinks="pf14132167107481" path="/secure/category/category.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/category/editCategory.xhtml" id="pf14132362570124" referenceLink="//@navigationRule.0/@navigationCase.28/@toViewId|" inlinks="pf14132362570111" path="/secure/category/editCategory.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/category/newCategory.xhtml" id="pf14132362570125" referenceLink="//@navigationRule.0/@navigationCase.29/@toViewId|" inlinks="pf14132362570112" path="/secure/category/newCategory.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/category/consultCategory.xhtml" id="pf14132364596397" referenceLink="//@navigationRule.0/@navigationCase.26/@toViewId|" inlinks="pf14132364596386" path="/secure/category/consultCategory.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/content/content.xhtml" id="pf14133960436764" referenceLink="//@navigationRule.0/@navigationCase.31/@toViewId|" inlinks="pf14133960436760" path="/secure/content/content.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/content/consultContent.xhtml" id="pf14133960436765" referenceLink="//@navigationRule.0/@navigationCase.30/@toViewId|" inlinks="pf14133960436761" path="/secure/content/consultContent.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/content/editContent.xhtml" id="pf14133960436766" referenceLink="//@navigationRule.0/@navigationCase.32/@toViewId|" inlinks="pf14133960436762" path="/secure/content/editContent.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/content/newContent.xhtml" id="pf14133960436767" referenceLink="//@navigationRule.0/@navigationCase.33/@toViewId|" inlinks="pf14133960436763" path="/secure/content/newContent.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/provider/consultProvider.xhtml" id="pf14147690524494" referenceLink="//@navigationRule.0/@navigationCase.34/@toViewId|" inlinks="pf14147690524480" path="/secure/provider/consultProvider.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/provider/editProvider.xhtml" id="pf14147690524496" referenceLink="//@navigationRule.0/@navigationCase.36/@toViewId|" inlinks="pf14147690524482" path="/secure/provider/editProvider.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/provider/newProvider.xhtml" id="pf14147690524497" referenceLink="//@navigationRule.0/@navigationCase.37/@toViewId|" inlinks="pf14147690524483" path="/secure/provider/newProvider.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="secure/provider/provider.xhtml" id="pf14147695859419" referenceLink="//@navigationRule.0/@navigationCase.35/@toViewId|" inlinks="pf14147695859418" path="/secure/provider/provider.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="mainPublic.xhtml" id="pf14169402510781" referenceLink="//@navigationRule.0/@navigationCase.38/@toViewId|" inlinks="pf14169402510780" path="/mainPublic.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="taxonomic/taxSearch.xhtml" id="pf14174294329274" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14174294329260" path="/taxonomic/taxSearch.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="taxonomic/taxResult.xhtml" id="pf14174294329275" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14174294329261" path="/taxonomic/taxResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="taxonomic/taxRecords.xhtml" id="pf14174294329276" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14174294329262" path="/taxonomic/taxRecords.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="taxonomic/taxVernaculars.xhtml" id="pf14174294329277" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf14174294329263" path="/taxonomic/taxVernaculars.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dataSet/dataSetSearch.xhtml" id="pf141743030726012" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf14174303072598" path="/dataSet/dataSetSearch.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dataSet/dataSetResult.xhtml" id="pf141743030726013" referenceLink="//@navigationRule.0/@navigationCase.5/@toViewId|" inlinks="pf14174303072599" path="/dataSet/dataSetResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dataSet/dataSetResultRow.xhtml" id="pf141743030726014" referenceLink="//@navigationRule.0/@navigationCase.9/@toViewId|" inlinks="pf141743030725910" path="/dataSet/dataSetResultRow.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dataSet/dataSetDetail.xhtml" id="pf141743030726015" referenceLink="//@navigationRule.0/@navigationCase.7/@toViewId|" inlinks="pf141743030725911" path="/dataSet/dataSetDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ocurrences/ocurrencesSearch.xhtml" id="pf14187317927194" referenceLink="//@navigationRule.0/@navigationCase.9/@toViewId|" inlinks="pf14187317927180" path="/ocurrences/ocurrencesSearch.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ocurrences/ocurrencesResult.xhtml" id="pf14187317927195" referenceLink="//@navigationRule.0/@navigationCase.10/@toViewId|" inlinks="pf14187317927181" path="/ocurrences/ocurrencesResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ocurrences/ocurrencesResultRow.xhtml" id="pf14187317927196" referenceLink="//@navigationRule.0/@navigationCase.11/@toViewId|" inlinks="pf14187317927182" path="/ocurrences/ocurrencesResultRow.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ocurrences/ocurrencesDetail.xhtml" id="pf14187317927197" referenceLink="//@navigationRule.0/@navigationCase.12/@toViewId|" inlinks="pf14187317927183" path="/ocurrences/ocurrencesDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="organization/organizationDetail.xhtml" id="pf14199328235271" referenceLink="//@navigationRule.0/@navigationCase.20/@toViewId|" inlinks="pf14199328235270" path="/organization/organizationDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ocurrences/organizationDetail.xhtml" id="pf14199335506113" referenceLink="//@navigationRule.0/@navigationCase.13/@toViewId|" inlinks="pf14199335506112" path="/ocurrences/organizationDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dataSet/organizationDetail.xhtml" id="pf14199365802595" referenceLink="//@navigationRule.0/@navigationCase.8/@toViewId|" inlinks="pf14199365802594" path="/dataSet/organizationDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ocurrences/dataSetDetail.xhtml" id="pf14199379799581" referenceLink="//@navigationRule.0/@navigationCase.14/@toViewId|" inlinks="pf14199379799580" path="/ocurrences/dataSetDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="species/speciesSearch.xhtml" id="pf14204742804844" referenceLink="//@navigationRule.0/@navigationCase.15/@toViewId|" inlinks="pf14204742804840" path="/species/speciesSearch.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="species/speciesResult.xhtml" id="pf14204742804845" referenceLink="//@navigationRule.0/@navigationCase.16/@toViewId|" inlinks="pf14204742804841" path="/species/speciesResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="species/speciesResultRow.xhtml" id="pf14204742804846" referenceLink="//@navigationRule.0/@navigationCase.17/@toViewId|" inlinks="pf14204742804842" path="/species/speciesResultRow.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="species/speciesDetail.xhtml" id="pf14204742804847" referenceLink="//@navigationRule.0/@navigationCase.18/@toViewId|" inlinks="pf14204742804843" path="/species/speciesDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="species/dataSetDetail.xhtml" id="pf14204801250089" referenceLink="//@navigationRule.0/@navigationCase.19/@toViewId|" inlinks="pf14204801250078" path="/species/dataSetDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dataSet/dataSetCSWResultRow.xhtml" id="pf14231323033001" referenceLink="//@navigationRule.0/@navigationCase.9/@toViewId|" inlinks="pf14231323033000" path="/dataSet/dataSetCSWResultRow.xhtml"/>
+  <links id="pf13039170745571" target="pf13039170745573" source="pf130382890011615" outcome="seguridad"/>
+  <links id="pf13046652617130" target="pf13046652617132" source="pf130382890011615" outcome="pruebaCache"/>
+  <links id="pf13046652617131" target="pf13046652617143" source="pf130382890011615" outcome="variablesConfiguracion"/>
+  <links id="pf13046652773454" target="pf13046652773465" source="pf130382890011615" outcome="panelControl"/>
+  <links id="pf13073628433370" target="pf13073628433381" source="pf130382890011615" outcome="mensaje"/>
+  <links id="pf14132167107481" target="pf14132167107485" source="pf130382890011615" outcome="listCategories"/>
+  <links id="pf14132362570111" target="pf14132362570124" source="pf130382890011615" outcome="editCategory"/>
+  <links id="pf14132362570112" target="pf14132362570125" source="pf130382890011615" outcome="newCategory"/>
+  <links id="pf14132364596386" target="pf14132364596397" source="pf130382890011615" outcome="consultCategory"/>
+  <links id="pf14133960436760" target="pf14133960436764" source="pf130382890011615" outcome="listContents"/>
+  <links id="pf14133960436761" target="pf14133960436765" source="pf130382890011615" outcome="consultContent"/>
+  <links id="pf14133960436762" target="pf14133960436766" source="pf130382890011615" outcome="editContent"/>
+  <links id="pf14133960436763" target="pf14133960436767" source="pf130382890011615" outcome="newContent"/>
+  <links id="pf14147690524480" target="pf14147690524494" source="pf130382890011615" outcome="consultProvider"/>
+  <links id="pf14147690524482" target="pf14147690524496" source="pf130382890011615" outcome="editProvider"/>
+  <links id="pf14147690524483" target="pf14147690524497" source="pf130382890011615" outcome="newProvider"/>
+  <links id="pf14147695859418" target="pf14147695859419" source="pf130382890011615" outcome="listProviders"/>
+  <links id="pf14169402510780" target="pf14169402510781" source="pf130382890011615" outcome="homePublic" redirect="true"/>
+  <links id="pf14174294329260" target="pf14174294329274" source="pf130382890011615" outcome="taxSearch"/>
+  <links id="pf14174294329261" target="pf14174294329275" source="pf130382890011615" outcome="taxResult"/>
+  <links id="pf14174294329262" target="pf14174294329276" source="pf130382890011615" outcome="taxRecords"/>
+  <links id="pf14174294329263" target="pf14174294329277" source="pf130382890011615" outcome="taxVernaculars"/>
+  <links id="pf14174303072598" target="pf141743030726012" source="pf130382890011615" outcome="dataSetSearch"/>
+  <links id="pf14174303072599" target="pf141743030726013" source="pf130382890011615" outcome="dataSetResult"/>
+  <links id="pf141743030725910" target="pf141743030726014" source="pf130382890011615" outcome="dataSetResultRow"/>
+  <links id="pf141743030725911" target="pf141743030726015" source="pf130382890011615" outcome="dataSetDetail"/>
+  <links id="pf14187317927180" target="pf14187317927194" source="pf130382890011615" outcome="ocurrencesSearch"/>
+  <links id="pf14187317927181" target="pf14187317927195" source="pf130382890011615" outcome="ocurrencesResult"/>
+  <links id="pf14187317927182" target="pf14187317927196" source="pf130382890011615" outcome="ocurrencesResultRow"/>
+  <links id="pf14187317927183" target="pf14187317927197" source="pf130382890011615" outcome="ocurrencesDetail"/>
+  <links id="pf14199328235270" target="pf14199328235271" source="pf130382890011615" outcome="organizationDetail"/>
+  <links id="pf14199335506112" target="pf14199335506113" source="pf130382890011615" outcome="ocurrencesOrganizationDetail"/>
+  <links id="pf14199365802594" target="pf14199365802595" source="pf130382890011615" outcome="dataSetOrganizationDetail"/>
+  <links id="pf14199379799580" target="pf14199379799581" source="pf130382890011615" outcome="ocurrencesDataSetDetail"/>
+  <links id="pf14204742804840" target="pf14204742804844" source="pf130382890011615" outcome="speciesSearch"/>
+  <links id="pf14204742804841" target="pf14204742804845" source="pf130382890011615" outcome="speciesResult"/>
+  <links id="pf14204742804842" target="pf14204742804846" source="pf130382890011615" outcome="speciesResultRow"/>
+  <links id="pf14204742804843" target="pf14204742804847" source="pf130382890011615" outcome="speciesDetail"/>
+  <links id="pf14204801250078" target="pf14204801250089" source="pf130382890011615" outcome="speciesDataSetDetail"/>
+  <links id="pf14231323033000" target="pf14231323033001" source="pf130382890011615" outcome="dataSetCSWResultRow"/>
+</pageflow:Pageflow>

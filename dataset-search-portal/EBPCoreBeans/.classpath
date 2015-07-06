@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/axis.jar"/>
+	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/javax.wsdl_1.6.2.v201012040545.jar"/>
+	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/saaj.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

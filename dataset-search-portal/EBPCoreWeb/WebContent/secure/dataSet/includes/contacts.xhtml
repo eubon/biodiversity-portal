@@ -1,0 +1,64 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+
+<a4j:repeat value="#{dataSetBean.dataSet.contacts}" var="contact" rows="20" id="repeatContacts">
+
+<p class="formulario_t2"><h:outputText value="#{contact.key} : #{contact.firstName}, #{contact.lastName}"/></p>
+<rich:panel>
+	<h:panelGrid styleClass="tablaCampos"  cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+		<h:outputText value="Key:" />
+		<h:outputText value="#{contact.key}" />  
+		<h:outputText value="Type:" />
+		<h:outputText value="#{contact.type}" />
+		
+		<h:outputText value="First Name:" />
+		<h:outputText value="#{contact.firstName}" />
+		<h:outputText value="Last Name:" />
+		<h:outputText value="#{contact.lastName}" />
+		<h:outputText value="Primary:" /><h:outputText value="#{contact.primary}" />
+		</h:panelGrid>
+		
+	<!--  	<h:panelGrid styleClass="tablaCampos"  cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+        <h:outputText value="Created By:" />
+		<h:outputText value="#{contact.createdBy}" />	
+		
+		<h:outputText value="Modified By:" />
+		<h:outputText value="#{contact.modifiedBy}" />	
+		
+		<h:outputText value="Created:" />
+		<h:outputText value="#{contact.created}" />	
+        
+		<h:outputText value="Modified:" />
+		<h:outputText value="#{contact.modified}" />	
+		</h:panelGrid>
+	-->	
+		<rich:panel header="Positions"> 		
+		  <a4j:repeat value="#{contact.positions}" var="position" rows="20" >
+             <h:outputText value="#{position}" />,
+		  </a4j:repeat>
+		</rich:panel>
+		<rich:panel header="Email"> 		
+		  <a4j:repeat value="#{contact.emails}" var="email" rows="20" >
+             <h:outputText value="#{email}" />,
+		  </a4j:repeat>
+		</rich:panel>
+		<rich:panel header="Phones"> 		
+		  <a4j:repeat value="#{contact.phones}" var="phone" rows="20" >
+             <h:outputText value="#{phone}" />,
+		  </a4j:repeat>
+		</rich:panel>
+		<rich:panel header="Home Page"> 		
+		  <a4j:repeat value="#{contact.homepages}" var="homepage" rows="20" >
+             <h:outputText value="#{homepage}" />,
+		  </a4j:repeat>
+		</rich:panel>
+
+	</rich:panel>	
+</a4j:repeat>
+</ui:composition>

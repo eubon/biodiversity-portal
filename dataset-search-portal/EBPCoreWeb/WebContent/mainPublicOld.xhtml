@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
+<f:view contentType="text/html">
+<h:head>
+<title>BlueGov - Tramitación de Expedientes</title>
+<h:outputStylesheet library="css" name="application.css"/>
+<ui:insert name="head"/>
+</h:head>
+<h:body>
+    <div id="page">
+        <div id="header">
+            <div class="right-controls">
+                <ul class="top-links layout">
+                </ul>
+            </div>
+            <div class="title">
+	            <img border="0" src="#{facesContext.externalContext.requestContextPath}/images/tramitator_title.jpg" alt="BlueGov" title="BlueGov"/>
+		        Tramitación de Expedientes
+            </div>
+            <div class="texto-usuario">
+            	<h:outputText rendered="#{loginBean.user!=null}" value="Usuario: #{loginBean.user}"/>
+            </div>            
+        </div>
+        <div id="page-content">
+            <div>
+				<ui:insert name="body">
+					<h:outputLink value="#{facesContext.externalContext.requestContextPath}/licencias/formularioSolicitud.jsf">
+						<h:outputText value="Formulario de solicitud de licencia" />
+					</h:outputLink>
+				</ui:insert>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="footer">
+				BlueGov &bull; Tramitación de Expedientes &copy; IBM GBS 
+        </div>
+    </div>
+</h:body> 
+</f:view>
+</html>

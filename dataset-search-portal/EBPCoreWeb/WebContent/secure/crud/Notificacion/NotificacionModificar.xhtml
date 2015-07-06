@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:rich="http://richfaces.org/rich" xmlns:h="http://java.sun.com/jsf/html" xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml">
+<ui:composition template="/secure/templates/main.xhtml">
+<ui:define name="head">
+<script type="text/javascript" language="javascript" src="#/js/fileupload.js"/>
+</ui:define>
+<ui:define name="body">
+<h:form>
+<rich:tabPanel switchType="client" styleClass="navigation">
+<rich:tab header="Modificación de expediente" mode="client">
+<p class="formulario_t1">Modificación de Notificacion</p>
+<h:panelGrid style="width:100%;" id="pgFisica" columns="2" cellspacing="0">
+<h:outputText value="idNotificacion:"/>
+<h:inputText value="#{NotificacionCRUDBean.objeto.idNotificacion}"/>
+<h:outputText value="fecha:"/>
+<h:column>
+<h:inputText id="itcrudfecha" value="#{NotificacionCRUDBean.objeto.fecha}">
+<f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" timeZone="CET"/>
+</h:inputText>
+<h:message for="itcrudfecha"/>
+</h:column>
+<h:outputText value="asunto:"/>
+<h:inputText value="#{NotificacionCRUDBean.objeto.asunto}"/>
+<h:outputText value="texto:"/>
+<h:inputText value="#{NotificacionCRUDBean.objeto.texto}"/>
+<h:outputText value="acuse:"/>
+<h:inputText value="#{NotificacionCRUDBean.objeto.acuse}"/>
+<h:outputText value="idRegistro:"/>
+<h:inputText value="#{NotificacionCRUDBean.objeto.idRegistro}"/>
+</h:panelGrid>
+<br/>
+<h:commandButton value="Guardar" action="#{NotificacionCRUDBean.guardar}"/>&#160;&#160;
+<h:commandButton value="Volver" immediate="true" action="#{NotificacionCRUDBean.ver}"/>
+</rich:tab>
+</rich:tabPanel>
+</h:form>
+</ui:define>
+</ui:composition>
+</html>

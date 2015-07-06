@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:rich="http://richfaces.org/rich" xmlns:h="http://java.sun.com/jsf/html" xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml">
+<ui:composition template="/secure/templates/main.xhtml">
+<ui:define name="head">
+<script type="text/javascript" language="javascript" src="#/js/fileupload.js"/>
+</ui:define>
+<ui:define name="body">
+<h:form>
+<rich:tabPanel switchType="client" styleClass="navigation">
+<rich:tab header="Consulta de expediente" mode="client">
+<p class="formulario_t1">Consulta de Configuracion</p>
+<h:panelGrid style="width:100%;" id="pgCampos" columns="2" cellspacing="0">
+<h:outputText value="idConfiguracion:"/>
+<h:outputText value="#{ConfiguracionCRUDBean.objeto.idConfiguracion}"/>
+<h:outputText value="clave:"/>
+<h:outputText value="#{ConfiguracionCRUDBean.objeto.clave}"/>
+<h:outputText value="descripcion:"/>
+<h:outputText value="#{ConfiguracionCRUDBean.objeto.descripcion}"/>
+<h:outputText value="valor:"/>
+<h:outputText value="#{ConfiguracionCRUDBean.objeto.valor}"/>
+</h:panelGrid>
+<br/>
+<h:outputText value="Relaciones:"/>
+<br/>
+<br/>
+<h:commandButton value="Modificar" action="#{ConfiguracionCRUDBean.modificar}"/>&#160;&#160;
+<h:commandButton value="Volver" immediate="true" action="#{ConfiguracionCRUDBean.listado}"/>
+</rich:tab>
+</rich:tabPanel>
+</h:form>
+</ui:define>
+</ui:composition>
+</html>

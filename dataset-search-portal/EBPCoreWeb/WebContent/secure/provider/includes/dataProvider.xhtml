@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	
+	<p class="formulario_t1">Provider Data</p>
+
+					<h:panelGrid styleClass="tablaCampos" id="provider" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+					
+						<h:outputText value="Id:" />
+						<h:outputText value="#{providerBean.provider.id}" />  
+  
+						<h:outputText value="Name:" />
+						<h:outputText value="#{providerBean.provider.name}" />
+
+						<h:outputText value="Service url:" />
+						<h:outputText value="#{providerBean.provider.serviceUrl}" />
+						
+						<h:outputText value="Default:"/>
+  <c:choose>
+    <c:when test="#{providerBean.provider.flgDefault == true}"><h:outputText value="Yes"/></c:when>
+    <c:when test="#{providerBean.provider.flgDefault == false}"><h:outputText value="No"/></c:when>
+  </c:choose>
+						 
+						<h:outputText value="Service Type:" />
+						<h:outputText value="#{providerBean.provider.serviceType.name}" />
+						
+						<h:outputText value="Priority:" />
+						<h:outputText value="#{providerBean.provider.priority}" />
+						
+					</h:panelGrid>
+    <br/>
+	<h:commandButton value="Edit" action="#{providerBean.edit}"/>&#160;&#160;
+	<h:commandButton value="Delete" action="#{providerBean.delete}"/>&#160;&#160;
+	<h:commandButton value="Back" immediate="true" action="#{providerBean.listProviders}"/> 
+	
+</ui:composition>
