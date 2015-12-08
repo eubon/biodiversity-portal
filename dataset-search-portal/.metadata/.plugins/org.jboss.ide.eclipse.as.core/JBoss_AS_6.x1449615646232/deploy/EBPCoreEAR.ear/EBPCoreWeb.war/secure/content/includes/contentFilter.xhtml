@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	<rich:collapsiblePanel header="Content Filter" switchType="client">
+
+<h:panelGrid styleClass="tablaCampos" id="content" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+					
+	<h:outputText value="Id:" />
+		<h:inputText value="#{sortingBean.filters['id']}">
+	    </h:inputText>
+
+	<h:outputText value="Title:" />
+		<h:inputText value="#{sortingBean.filters['LIKE_title']}">
+	    </h:inputText>
+	    
+	<h:outputText value="Category:" />
+	    <h:selectOneMenu value="#{sortingBean.filters['category.name']}" label="categorySelect">
+	      <f:selectItem itemLabel="Any" itemValue="" />
+		  <f:selectItems value="#{contentBean.listCategories}" var="_category" itemValue="#{_category.name}" itemLabel="#{_category.name}"/>
+    </h:selectOneMenu>  
+
+	    <h:outputLabel value="From: " />
+	    <rich:calendar enableManualInput="true" required="false" inputSize="10"
+								value="#{sortingBean.filtersGe['publishDate']}"	datePattern="dd/MM/yyyy">
+								<f:attribute name="label" value="From" />
+							</rich:calendar>
+
+ 		  <h:outputLabel value="To: " />
+		<rich:calendar enableManualInput="true" required="false" inputSize="10"
+								value="#{sortingBean.filtersLe['publishDate']}"	datePattern="dd/MM/yyyy">
+								<f:attribute name="label" value="To" />
+							</rich:calendar>
+	    
+	<h:outputText value="Published:" />
+	   <h:selectOneMenu value="#{sortingBean.filters['flgPublish']}" id="f_editable">
+	   <f:selectItem itemValue="" itemLabel="Any"></f:selectItem>
+		<f:selectItem itemValue="#{true}" itemLabel="Yes"></f:selectItem>
+		<f:selectItem itemValue="#{false}" itemLabel="No"></f:selectItem>
+	   </h:selectOneMenu>
+	   
+	   
+
+</h:panelGrid>
+<br/>
+    <h:commandButton value="Search">
+		<a4j:ajax render="tableContent,dscrollerContent" execute="@form" event="click" />
+	</h:commandButton>&#160;&#160;
+	<h:commandButton value="New Content" action="#{contentBean.newBean}"/>&#160;&#160;
+	
+	</rich:collapsiblePanel>
+</ui:composition>

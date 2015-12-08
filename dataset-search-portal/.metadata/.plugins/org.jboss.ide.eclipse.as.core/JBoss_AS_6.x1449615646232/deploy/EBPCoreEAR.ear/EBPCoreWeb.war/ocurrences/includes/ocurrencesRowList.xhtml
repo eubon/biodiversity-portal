@@ -1,0 +1,88 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+<br/>
+					
+	
+<rich:dataTable value="#{ocurrencesBean.ocurrencesResult.ocurrences}" var="ocurrence" id="tableOcurrences" rowClasses="odd-row, even-row" styleClass="stable">
+  <f:facet name="noData">No Results</f:facet>
+  <rich:column>
+    <f:facet name="header">
+     <h:outputText value="Occurrence"/>
+    </f:facet>
+    <h:commandLink action="#{ocurrencesBean.consultOcurrencesRow}">
+     <f:param name="key" value="#{ocurrence.key}"/>
+     <h:outputText value="#{ocurrence.key}"/>
+    </h:commandLink>
+  </rich:column>
+<!--    <rich:column>
+    <f:facet name="header">
+     <h:outputText value="DataSet"/>
+    </f:facet>
+    <h:commandLink action="#{dataSetBean.consultDataSet}" target="_blank" >
+     <f:param name="key" value="#{ocurrence.key}"/>
+         <h:outputText value="#{ocurrence.datasetKey}"/>
+     </h:commandLink>
+  </rich:column>
+-->
+  <rich:column>
+    <f:facet name="header">
+      <h:outputText value="Country"/>
+    </f:facet>
+    <h:outputText value="#{ocurrence.publishingCountry}"/>
+  </rich:column>
+  <rich:column>
+    <f:facet name="header">
+      <h:outputText value="Scientific Name"/>
+    </f:facet>
+    <h:outputText value="#{ocurrence.taxon.scientificName}"/>
+  </rich:column>
+  <rich:column>
+    <f:facet name="header">
+      <h:outputText value="Kingdom"/>
+    </f:facet>
+    <h:outputText value="#{ocurrence.taxon.kingdom}"/>
+  </rich:column>
+  <rich:column>
+    <f:facet name="header">
+      <h:outputText value="Phylum"/>
+    </f:facet>
+    <h:outputText value="#{ocurrence.taxon.phylum}"/>
+  </rich:column>
+  <rich:column>
+    <f:facet name="header">
+      <h:outputText value="order"/>
+    </f:facet>
+    <h:outputText value="#{ocurrence.taxon.order}"/>
+  </rich:column>
+  <rich:column>
+    <f:facet name="header">
+      <h:outputText value="Record"/>
+    </f:facet>
+    <h:outputText value="#{ocurrence.basisOfRecord}"/>
+  </rich:column>
+  <rich:column>
+    <f:facet name="header">
+      <h:outputText value="Date"/>
+    </f:facet>
+    <h:outputText value="#{ocurrence.day}-#{ocurrence.month}-#{ocurrence.year}"/>
+  </rich:column>
+  <rich:column>
+    <f:facet name="header">
+      <h:outputText value="Protocol"/>
+    </f:facet>
+    <h:outputText value="#{ocurrence.protocol}"/>
+  </rich:column>
+
+
+
+
+</rich:dataTable>
+
+
+</ui:composition>

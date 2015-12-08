@@ -1,0 +1,99 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	<ui:include src="/secure/content/includes/contentFilter.xhtml" />
+
+<br/> <br/>
+					
+	<rich:dataTable value="#{dataModel}" reRender="dscrollerCategory" 
+		selectionMode="#{selectionMode}" var="content" id="tableContent" selection="#{selection}"
+		rowClasses="odd-row, even-row" styleClass="stable" rows="15">
+
+		<f:facet name="noData">No Results</f:facet>
+
+		<rich:column sortBy="#{'id'}" 
+			sortOrder="#{sortingBean.orderField('id')}"
+			filterValue="#{sortingBean.filters['id']}"
+			filterExpression="#{'id'}">
+			<f:facet name="header">
+				<h:commandLink style="color:black" value="Id #{sortingBean.orderArrow('id')}">
+					<f:ajax render="tableContent" listener="#{sortingBean.sortBy}"	event="click" />
+					<f:param name="campo" value="id" />
+				</h:commandLink>				
+			</f:facet>
+			<h:commandLink action="#{contentBean.consult}">
+				<f:param name="id" value="#{content.id}" />
+				<h:outputText value="#{content.id}" />
+			</h:commandLink>							
+		</rich:column>
+		
+		<rich:column sortBy="#{'title'}" 
+			sortOrder="#{sortingBean.orderField('title')}"
+			filterValue="#{sortingBean.filters['LIKE_title']}"
+			filterExpression="#{'LIKE_title'}" width="40">
+			<f:facet name="header">
+				<h:commandLink style="color:black" value="Name #{sortingBean.orderArrow('title')}">
+					<f:ajax render="tableContent" listener="#{sortingBean.sortBy}"	event="click" />
+					<f:param name="campo" value="title" />
+				</h:commandLink>
+			</f:facet>
+			<h:outputText value="#{content.title}" />
+		</rich:column>
+		
+		<rich:column sortBy="#{'category.name'}"
+			sortOrder="#{sortingBean.orderField('category.name')}"
+			filterValue="#{sortingBean.filters['category.name']}"
+			filterExpression="#{'category.name'}">
+			<f:facet name="header">
+				<h:commandLink style="color:black"
+					value="Category #{sortingBean.orderArrow('category.name')}">
+					<f:ajax render="tableContent" listener="#{sortingBean.sortBy}"
+						event="click" />
+					<f:param name="campo" value="category.name" />
+				</h:commandLink>
+			</f:facet>
+			<h:outputText value="#{content.category.name}" />
+		</rich:column>
+		
+		<rich:column sortBy="#{'publishDate'}"
+			sortOrder="#{sortingBean.orderField('publishDate')}"
+			filterValue="#{sortingBean.filtersGe['publishDate']},#{sortingBean.filtersLe['publishDate']}"
+			filterExpression="#{'BETWEEN_publishDate'}">
+			<f:facet name="header">
+				<h:commandLink style="color:black"
+					value="Publish Date #{sortingBean.orderArrow('publishDate')}">
+					<f:ajax render="tableContent" listener="#{sortingBean.sortBy}"
+						event="click" />
+					<f:param name="campo" value="publishDate" />
+				</h:commandLink>
+			</f:facet>
+			<h:outputText value="#{content.publishDate}" >
+			       <f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm:ss:SSS" timeZone="CET"/>   
+            </h:outputText>
+		</rich:column>
+		
+		<rich:column sortBy="#{'flgPublish'}"
+			sortOrder="#{sortingBean.orderField('flgPublish')}"
+			filterValue="#{sortingBean.filters['flgPublish']}"
+			filterExpression="#{'flgPublish'}">
+			<f:facet name="header">
+				<h:commandLink style="color:black"
+					value="Published #{sortingBean.orderArrow('flgPublish')}">
+					<f:ajax render="tableContent" listener="#{sortingBean.sortBy}"
+						event="click" />
+					<f:param name="campo" value="flgPublish" />
+				</h:commandLink>
+			</f:facet>
+			<h:outputText value="Yes" rendered="#{content.flgPublish == true}" />
+			<h:outputText value="No" rendered="#{content.flgPublish == false}" />
+		</rich:column>
+
+	</rich:dataTable>
+	<rich:dataScroller for="tableContent" id="dscrollerContent" fastControls="hide" />
+</ui:composition>

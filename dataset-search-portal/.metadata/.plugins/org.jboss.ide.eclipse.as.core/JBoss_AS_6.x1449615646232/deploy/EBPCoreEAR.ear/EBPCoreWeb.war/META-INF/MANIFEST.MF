@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Class-Path: expiringcache.jar 
+ jasperreports-4.0.2.jar 
+ commons-digester-1.7.jar 
+ iText-2.1.7.jar 
+ COMPLETA_j6_afirma5_coreV3.jar  
+ EBPCoreBeans.jar 
+ EBPCoreJPA.jar 
+ EBPCoreEJB.jar 
+ EBPCoreDAO.jar
+ EBPCoreUtil.jar
+

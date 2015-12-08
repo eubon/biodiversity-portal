@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	
+						
+	<h:outputText value="Name:" />
+	<h:inputText value="#{providerBean.provider.name}" size="40" maxlength="40"
+	   required ="true" requiredMessage ="The Field Name is mandatory"
+	   validatorMessage ="The max lenght for Name is 40 char.">
+	   <f:validateLength maximum ="40" />
+	</h:inputText>
+
+	<h:outputText value="Service Url:" />
+	<h:inputText value="#{providerBean.provider.serviceUrl}" size="100" maxlength="250"
+	   required ="true" requiredMessage ="The Field Service Url is mandatory"
+	   validatorMessage ="The max lenght for Description is 250 char.">
+	   <f:validateLength maximum ="250" />
+	</h:inputText>
+	
+	<h:outputText value="Default:"/>
+    <h:selectOneMenu value="#{providerBean.provider.flgDefault}" id="default">
+		<f:selectItem itemValue="true" itemLabel="Yes"></f:selectItem>
+		<f:selectItem itemValue="false" itemLabel="No"></f:selectItem>
+	</h:selectOneMenu>
+
+	<h:outputText value="Service Type:" />
+	    <h:selectOneMenu value="#{providerBean.serviceType}" label="serviceTypeSelect">
+	      <f:selectItem itemLabel="Select a Service Type" itemValue="0" />
+		  <f:selectItems value="#{providerBean.serviceTypeList}" var="_serviceType" itemValue="#{_serviceType.id}" itemLabel="#{_serviceType.name}"/>
+        </h:selectOneMenu>
+
+	<h:outputText value="Priority:" />
+	<rich:inputNumberSpinner value="#{providerBean.provider.priority}" maxValue="20" minValue="1"/>
+	
+</ui:composition>

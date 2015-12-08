@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:form>
+
+						Buscar por num expediente:
+						<h:inputText value="#{expedienteBean.expedientesSortingBean.filters['idExpediente']}"/>
+                        <h:commandButton value="Buscar">
+                            <a4j:ajax render="table,dscroller" execute="@form" event="click" />
+						</h:commandButton>
+						<br/><br/>
+	<rich:dataTable value="#{expedienteBean.expedientesDataModel}" var="expediente"
+							id="table" rowClasses="odd-row, even-row" 
+							styleClass="stable"
+							style="width:100%" 
+							rows="15"
+							>
+							
+           <rich:column sortBy="#{'idExpediente'}" 
+                sortOrder="#{expedienteBean.expedientesSortingBean.orderField('idExpediente')}"
+                
+				filterValue="#{expedienteBean.expedientesSortingBean.filters['idExpediente']}"
+				filterExpression="#{'idExpediente'}"                
+                >
+                <f:facet name="header">
+                    <h:commandLink style="color:black" value="Nº exp #{expedienteBean.expedientesSortingBean.orderArrow('idExpediente')}">
+                       	<f:ajax render="table" listener="#{expedienteBean.expedientesSortingBean.sortBy}" event="click"/>
+                		<f:param name="campo" value="idExpediente"/>
+                    </h:commandLink>
+                </f:facet>				                
+                
+                <h:commandLink action="#{expedienteBean.consultaExpediente}">
+                	<f:param name="idExpediente" value="#{expediente.idExpediente}"/>
+                   	<h:outputText value="#{expediente.idExpediente}" />
+                </h:commandLink>
+			</rich:column>
+			
+			<rich:column sortBy="#{'NIF'}" 
+                sortOrder="#{expedienteBean.expedientesSortingBean.orderField('NIF')}">
+                <f:facet name="header">
+                    <h:commandLink style="color:black" value="NIF #{expedienteBean.expedientesSortingBean.orderArrow('NIF')}">
+                       	<f:ajax render="table" listener="#{expedienteBean.expedientesSortingBean.sortBy}" event="click"/>
+                		<f:param name="campo" value="NIF"/>
+                    </h:commandLink>
+                                             
+                </f:facet>		
+
+                <h:outputText  value="#{expediente.NIF}"/>
+			</rich:column>
+			
+			<rich:column sortBy="#{'nombre'}" 
+                sortOrder="#{expedienteBean.expedientesSortingBean.orderField('nombre')}">
+                <f:facet name="header">
+                    <h:commandLink style="color:black" value="Nombre #{expedienteBean.expedientesSortingBean.orderArrow('nombre')}">
+                       	<f:ajax render="table" listener="#{expedienteBean.expedientesSortingBean.sortBy}" event="click"/>
+                		<f:param name="campo" value="nombre"/>
+                    </h:commandLink>
+                                             
+                </f:facet>		
+
+                <h:outputText  value="#{expediente.nombre}"/>
+			</rich:column>
+			
+			<rich:column sortBy="#{'apellidos'}" 
+                sortOrder="#{expedienteBean.expedientesSortingBean.orderField('apellidos')}">
+                <f:facet name="header">
+                    <h:commandLink style="color:black" value="Apellidos #{expedienteBean.expedientesSortingBean.orderArrow('apellidos')}">
+                       	<f:ajax render="table" listener="#{expedienteBean.expedientesSortingBean.sortBy}" event="click"/>
+                		<f:param name="campo" value="apellidos"/>
+                    </h:commandLink>
+                                             
+                </f:facet>		
+
+                <h:outputText  value="#{expediente.apellidos}"/>
+			</rich:column>
+			
+			<rich:column sortBy="#{'estado'}" 
+                sortOrder="#{expedienteBean.expedientesSortingBean.orderField('estado')}">
+                <f:facet name="header">
+                    <h:commandLink style="color:black" value="Estado #{expedienteBean.expedientesSortingBean.orderArrow('estado')}">
+                       	<f:ajax render="table" listener="#{expedienteBean.expedientesSortingBean.sortBy}" event="click"/>
+                		<f:param name="campo" value="estado"/>
+                    </h:commandLink>
+                                             
+                </f:facet>		
+
+                <h:outputText  value="#{expediente.estado.nombre}"/>
+			</rich:column>
+			
+
+			<rich:column sortBy="#{'fecha'}" 
+                sortOrder="#{expedienteBean.expedientesSortingBean.orderField('fecha')}">
+                <f:facet name="header">
+                    <h:commandLink style="color:black" value="Fecha #{expedienteBean.expedientesSortingBean.orderArrow('fecha')}">
+                       	<f:ajax render="table" listener="#{expedienteBean.expedientesSortingBean.sortBy}" event="click"/>
+                		<f:param name="campo" value="fecha"/>
+                    </h:commandLink>
+                                             
+                </f:facet>		
+                   <h:outputText  value="#{expediente.fecha}">
+                   	<f:convertDateTime type="date" pattern="dd/MM/yyyy" timeZone="CET"/>
+                   </h:outputText>
+			</rich:column>
+			
+		</rich:dataTable>
+		<rich:dataScroller for="table" id="dscroller" fastControls="hide"/>
+</h:form>
+</ui:composition>

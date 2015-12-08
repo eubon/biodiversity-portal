@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:rich="http://richfaces.org/rich" xmlns:h="http://java.sun.com/jsf/html" xmlns:a4j="http://richfaces.org/a4j" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml">
+<ui:composition template="/secure/templates/main.xhtml">
+<ui:define name="body">
+<rich:tabPanel switchType="client" styleClass="navigation">
+<rich:tab header="Listado de Documentos">
+<h:form>
+<rich:dataTable value="#{DocumentoCRUDBean.lista}" var="objeto" id="table" rowClasses="odd-row, even-row" styleClass="stable">
+<rich:column>
+<f:facet name="header">
+<h:outputText value="Id"/>
+</f:facet>
+<h:commandLink action="#{DocumentoCRUDBean.consulta}">
+<f:param name="id" value="#{objeto.idDocumento}"/>
+<h:outputText value="#{objeto.idDocumento}"/>
+</h:commandLink>
+</rich:column>
+</rich:dataTable>
+</h:form>
+</rich:tab>
+</rich:tabPanel>
+</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+entitygen.DEFAULT_PACKAGE=model
+jpqlIdentifier.CASE=lowercase
+jpqlIdentifier.MATCH_FIRST_CHARACTER_CASE=true
+jpqlQueryEditorNumberOfLines=5
+problem.NO_JPA_PROJECT=error
+problem.PROJECT_NO_PERSISTENCE_XML=warning

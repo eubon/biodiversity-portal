@@ -1,0 +1,125 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	
+	<p class="formulario_t2">DataSet General Data</p>
+
+
+	<h:panelGrid styleClass="tablaCampos" id="dataSetGeneral" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+		<h:outputText value="Key:" />
+		<h:outputText value="#{dataSetBean.dataSet.key}" />  
+		<h:outputText value="Title:" />
+		<h:outputText value="#{dataSetBean.dataSet.title}" />
+		<h:outputText value="Description:" />
+		<h:outputText value="#{dataSetBean.dataSet.description}" />
+		<h:outputText value="Type:" />
+		<h:outputText value="#{dataSetBean.dataSet.type}" />
+		
+		<h:outputText value="Publishing Organization:" />
+		<h:commandLink action="#{dataSetBean.consultOrganization}">
+		  <f:param name="key" value="#{dataSetBean.dataSet.publishingOrganizationKey}"/>
+		  <h:outputText value="#{dataSetBean.dataSet.publishingOrganizationKey}" />
+       </h:commandLink>
+		<h:outputText value="Language:" />
+		<h:outputText value="#{dataSetBean.dataSet.language}" />
+		<h:outputText value="Citation:" />
+		<h:outputText value="#{dataSetBean.dataSet.citation.text}" />
+		<h:outputText value="Rights:" />
+		<h:outputText value="#{dataSetBean.dataSet.rights}" />	
+		<h:outputText value="External:" />
+		<c:choose>
+		    <c:when test="#{dataSetBean.dataSet.external == true}"><h:outputText value="Yes"/></c:when>
+		    <c:when test="#{dataSetBean.dataSet.external == false}"><h:outputText value="No"/></c:when>
+        </c:choose>
+		<h:outputText value="Number of Constituents:" />
+		<h:outputText value="#{dataSetBean.dataSet.numConstituents}" />
+		<h:outputText value="locked For Auto Update:" />
+		<c:choose>
+		    <c:when test="#{dataSetBean.dataSet.lockedForAutoUpdate == true}"><h:outputText value="Yes"/></c:when>
+		    <c:when test="#{dataSetBean.dataSet.lockedForAutoUpdate == false}"><h:outputText value="No"/></c:when>
+        </c:choose>
+        <h:outputText value="Data Language:" />
+        <h:outputText value="#{dataSetBean.dataSet.dataLanguage}" />
+        <h:outputText value="Additional Info:" />
+        <h:outputText value="#{dataSetBean.dataSet.additionalInfo}" />
+		<h:outputText value="Publication Date:" />
+        <h:outputText value="#{dataSetBean.dataSet.pubDate}" />
+      </h:panelGrid>
+     
+      <h:panelGrid styleClass="tablaCampos" id="dataSetCreated" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >  
+        <h:outputText value="Created By:" />
+		<h:outputText value="#{dataSetBean.dataSet.createdBy}" />	
+		
+		<h:outputText value="Modified By:" />
+		<h:outputText value="#{dataSetBean.dataSet.modifiedBy}" />	
+		
+		<h:outputText value="Created:" />
+		<h:outputText value="#{dataSetBean.dataSet.created}" />	
+        
+		<h:outputText value="Modified:" />
+		<h:outputText value="#{dataSetBean.dataSet.modified}" />	
+	  </h:panelGrid>
+	
+	<br/>
+	<rich:panel header="Citation">
+	<h:panelGrid styleClass="tablaCampos" id="contentCitacion" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+		<h:outputText value="Citation:" />
+		<h:outputText value="#{dataSetBean.dataSet.citation.text}" />	
+	</h:panelGrid>
+	</rich:panel>
+	
+	<rich:panel header="Contacts">
+	<ui:include src="contacts.xhtml" />
+	</rich:panel>
+	
+	<rich:panel header="Endpoints">
+	<ui:include src="endpoints.xhtml" />
+	</rich:panel>
+	
+	<rich:panel header="Machine Tags">
+	<ui:include src="machineTags.xhtml" />
+	</rich:panel>
+
+	<rich:panel header="Identifiers">
+	<ui:include src="identifiers.xhtml" />
+	</rich:panel>
+	
+	<rich:panel header="Tags">
+	  <a4j:repeat value="#{dataSetBean.dataSet.tags}" var="tag" rows="20" >
+		     <h:outputText value="#{tag}" />,
+      </a4j:repeat>	
+    </rich:panel>
+
+	<rich:panel header="Comments">
+	  <a4j:repeat value="#{dataSetBean.dataSet.comments}" var="comment" rows="20" >
+		     <h:outputText value="#{comment}" />,
+      </a4j:repeat>	
+    </rich:panel>
+	
+	
+	<rich:panel header="Taxonomic Coverages" rendered="not empty dataSetBean.dataSet.taxonomicCoverages">
+	<ui:include src="taxCoverages.xhtml" />
+	</rich:panel>
+	
+	  <rich:panel header="Geographic Coverages">
+	<ui:include src="geoCoverages.xhtml" />
+	</rich:panel>
+	
+	<rich:panel header="Temporal Coverages">
+	<ui:include src="tempCoverages.xhtml" />
+	</rich:panel>
+
+	<rich:panel header="Keyword Collections">
+	<ui:include src="keywordCollections.xhtml" />
+	</rich:panel>
+
+	<br/>
+	<h:commandButton value="Back" immediate="true" action="#{dataSetBean.backToDataSetResult}"/> 
+
+</ui:composition>

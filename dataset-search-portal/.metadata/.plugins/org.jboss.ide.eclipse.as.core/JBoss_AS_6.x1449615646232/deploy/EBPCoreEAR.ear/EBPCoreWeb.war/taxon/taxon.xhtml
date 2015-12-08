@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+
+
+<p class="formulario_t2"><h:outputText value="#{taxon.taxonKey}: #{taxon.scientificName}, #{taxon.genericName}" /></p>
+
+	<h:panelGrid styleClass="tablaCampos"  cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+		<h:outputText value="Scientific Name:" />
+		<h:outputText value="#{taxon.scientificName}" />		
+		<h:outputText value="Generic Name:" />
+		<h:outputText value="#{taxon.genericName}" />		
+
+		<h:outputText value="Kingdom:" />
+		<h:outputText value="#{taxon.kingdomKey}: #{taxon.kingdom}" />
+		<h:outputText value="Phylum:" />
+		<h:outputText value="#{taxon.phylumKey}: #{taxon.phylum}" />
+		<h:outputText value="Class:" />
+		<h:outputText value="#{taxon.classKey}: #{ocurrenceClass}" />
+		<h:outputText value="Order:" />
+		<h:outputText value="#{taxon.orderKey}: #{taxon.order}" />
+		<h:outputText value="Family:" />
+		<h:outputText value="#{taxon.familyKey}: #{taxon.family}" />
+		<h:outputText value="Genus:" />
+		<h:outputText value="#{taxon.genusKey}: #{taxon.genus}" />
+		<h:outputText value="Species:" />
+		<h:outputText value="#{taxon.speciesKey}: #{taxon.species}" />		
+
+		<h:outputText value="Specific Epithet:" />
+		<h:outputText value="#{taxon.specificEpithet}" />		
+		<h:outputText value="Taxon Rank:" />
+		<h:outputText value="#{taxon.taxonRank}" />		
+
+		</h:panelGrid>	
+</ui:composition>

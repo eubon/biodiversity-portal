@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+    <h:outputText value="Provider Functions" styleClass="formulario_t1"/>
+					<rich:dataTable value="#{providerBean.provider.functionProviders}" var="providerFunction"
+						id="table" rowClasses="odd-row, even-row" styleClass="stable">
+						<f:facet name="noData">The provider has no functions.</f:facet>
+						<f:facet name="header">
+							<rich:columnGroup>
+								<rich:column>
+									<h:outputText value="Name" />
+								</rich:column>
+								<rich:column>
+									<h:outputText value="Description" />
+								</rich:column>
+								<rich:column>
+								   <h:outputText value="Action" />
+								</rich:column>				
+							</rich:columnGroup>
+						</f:facet>						
+						<rich:column><h:outputText value="#{providerFunction.function.name}" /></rich:column>
+						<rich:column><h:outputText value="#{providerFunction.function.description}" /></rich:column>
+						<rich:column>
+						   <h:commandLink action="#{providerBean.deleteFunction}">
+								<f:param name="id" value="#{providerFunction.function.id}" />
+								<h:graphicImage library="img" name="delete.png" height="16" alt="delete" title="delete"></h:graphicImage>
+							</h:commandLink>
+						</rich:column>
+					</rich:dataTable>
+					
+	<h:outputLabel for="funcionesSelect" value="Functions" />
+	&#160;
+  	<h:selectOneMenu value="#{providerBean.functionSelected}" label="funcionesSelect">
+      <f:selectItems value="#{providerBean.functionsList}" var="_funcion" itemValue="#{_funcion.id}" itemLabel="#{_funcion.name}"/>
+    </h:selectOneMenu>  
+   
+   &#160;<h:commandButton value="Asign Function" action="#{providerBean.asignFunction}"/>&#160;&#160;
+					
+</ui:composition>
+

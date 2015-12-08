@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	
+	<p class="formulario_t1">Category Data</p>
+
+<h:panelGrid styleClass="tablaCampos" id="category" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+
+
+	<h:outputText value="Id:" />			
+	<h:outputText value="#{categoryBean.category.id}" />  
+					
+<ui:include src="/secure/category/includes/editableFields.xhtml" />						
+
+</h:panelGrid>	
+	<br/><br/>
+						
+	<h:commandButton value="Save category" onclick="#{rich:component('confirmationModifCateg')}.show();return false"/>&#160;&#160;
+	<h:commandButton value="Back" immediate="true" action="#{categoryBean.view}"> 
+	</h:commandButton>		
+	
+	<ui:include	src="/secure/templates/includes/popUpConfirmacionNoForm.xhtml">
+		<ui:param name="id" value="ModifCateg" />
+		<ui:param name="observaciones" value="#{false}" />
+		<ui:param name="textoConfirmacion"
+				value="Category Edition ¿continue?" />
+		<ui:param name="bean" value="#{categoryBean}" />
+		<ui:param name="action" value="saveBean" />
+	</ui:include>
+	
+</ui:composition>

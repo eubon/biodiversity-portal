@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"    
+	>
+
+<ui:composition template="/secure/templates/main.xhtml">
+	<ui:define name="body">
+		<rich:tabPanel switchType="client" styleClass="navigation">
+				<rich:tab header="Notificación" >
+					<p class="formulario_t1">Consulta de expediente</p>
+					<p class="formulario_t2">Consulta de notificación</p>
+					<h:form>
+					<br/>
+						<h:outputText  styleClass="formulario_t4" value="Asunto:"/><br/>
+						<h:outputText value="#{notificacionBean.notificacion.asunto}"/><br/>
+						<br/>
+						<h:outputText  styleClass="formulario_t4" value="Texto:"/><br/>
+						<h:inputTextarea cols="50" rows="6" readonly="true" value="#{notificacionBean.notificacion.texto}"/><br/>
+						<br/>
+						<h:commandButton value="Volver" action="#{expedienteBean.verExpedienteActual}"/> 
+					</h:form>
+				</rich:tab>
+		</rich:tabPanel> 
+	</ui:define>
+</ui:composition>
+</html>

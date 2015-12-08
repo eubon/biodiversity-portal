@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:rich="http://richfaces.org/rich"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns="http://www.w3.org/1999/xhtml">
+<ui:composition template="/secure/templates/main.xhtml">
+	<ui:define name="body">
+		<rich:panel switchType="client" styleClass="navigation"	header="Contents">
+			<h:form>
+				<ui:include src="includes/contentList.xhtml">
+					<ui:param name="sortingBean" value="#{contentBean.sortingBean}" />
+					<ui:param name="dataModel" value="#{contentBean.dataModel}" />
+					<ui:param name="selection" value="#{contentBean.selection}" />
+					<ui:param name="selectionMode" value="none" />
+				</ui:include>
+				<br/><br/>				
+				<h:commandButton value="New Content" action="#{contentBean.newBean}"/>&#160;&#160;
+			</h:form>
+		</rich:panel>
+	</ui:define>
+</ui:composition>
+</html>

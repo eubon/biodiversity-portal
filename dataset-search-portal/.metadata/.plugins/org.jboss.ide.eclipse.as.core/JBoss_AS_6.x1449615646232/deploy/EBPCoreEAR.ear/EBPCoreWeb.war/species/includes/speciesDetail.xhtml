@@ -1,0 +1,78 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	
+	<p class="formulario_t2">Specie General Data</p>
+
+
+	<h:panelGrid styleClass="tablaCampos" id="specieGeneral" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+	  
+		<h:outputText value="Key: (Click for Occurrencies)" />
+		<h:commandLink action="#{ocurrencesBean.ocurrencesSearchByKey}">
+		  <f:param name="key" value="#{speciesBean.row.key}"/>
+		  <h:outputText value="#{speciesBean.row.key}" />  
+		</h:commandLink>
+		<h:outputText value="DataSet Key:" />
+		<h:commandLink action="#{speciesBean.consultDataSet}">
+		  <f:param name="key" value="#{speciesBean.row.datasetKey}"/>
+		  <h:outputText value="#{speciesBean.row.datasetKey}" />
+		</h:commandLink>
+		<h:outputText value="Parent Key:" />
+		<h:outputText value="#{speciesBean.row.parentKey}" />  
+		<h:outputText value="Parent:" />
+		<h:outputText value="#{speciesBean.row.parent}" />  
+		
+		<h:outputText value="Canonical Name:" />
+		<h:outputText value="#{speciesBean.row.canonicalName}" />  
+		<h:outputText value="Vernacular Name:" />
+		<h:outputText value="#{speciesBean.row.vernacularName}" />  
+		
+		<h:outputText value="Authorship:" />
+		<h:outputText value="#{speciesBean.row.authorship}" />  
+		<h:outputText value="Name Type:" />
+		<h:outputText value="#{speciesBean.row.nameType}" />  
+		<h:outputText value="Taxonomic Status:" />
+		<h:outputText value="#{speciesBean.row.taxonomicStatus}" />  
+
+		<h:outputText value="Published In:" />
+		<h:outputText value="#{speciesBean.row.publishedIn}" />  
+		<h:outputText value="According To:" />
+		<h:outputText value="#{speciesBean.row.accordingTo}" />  
+		<h:outputText value="# Descendants:" />
+		<h:outputText value="#{speciesBean.row.numDescendants}" />  
+		
+	</h:panelGrid>	
+
+		<rich:panel header="Taxon">
+			<ui:include src="/taxon/taxon.xhtml">
+				    <ui:param name="taxon" value="#{speciesBean.row.taxon}" />
+		    </ui:include>
+		</rich:panel>
+
+	<h:panelGrid styleClass="tablaCampos" id="ocurrence1" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+				
+		<h:outputText value="Modified:" />
+		<h:outputText value="#{speciesBean.row.modified}" />
+		<h:outputText value="Last Interpreted:" />
+		<h:outputText value="#{speciesBean.row.lastInterpreted}" />
+		<h:outputText value="Class:" />
+		<h:outputText value="#{speciesBean.row.specieClass}" />
+
+	</h:panelGrid>	
+	
+	<rich:panel header="Issues">
+	  <a4j:repeat value="#{speciesBean.row.issues}" var="issue" rows="40" >
+		     <h:outputText value="#{issue}" />,
+      </a4j:repeat>	
+    </rich:panel>
+
+	<br/>
+	<h:commandButton value="Back" immediate="true" action="#{speciesBean.backToSpeciesResult}"/> 
+
+</ui:composition>

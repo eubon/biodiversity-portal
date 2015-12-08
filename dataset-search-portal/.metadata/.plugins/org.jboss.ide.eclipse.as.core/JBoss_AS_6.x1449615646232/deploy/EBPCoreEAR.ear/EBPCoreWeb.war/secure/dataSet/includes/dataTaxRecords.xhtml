@@ -1,0 +1,77 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	
+	<p class="formulario_t1">Tax Records</p>
+	<a4j:repeat value="#{taxoBean.recordList}" var="record" rows="20" id="repeat">
+
+
+      <rich:collapsiblePanel header="#{record.scientificname}" switchType="client" expanded="false">
+	    <h:panelGrid styleClass="tablaCampos" id="content" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+
+		 <h:outputText value="Scientific Name:" />
+		 <h:outputText value="#{record.scientificname}" />  
+
+		 <h:outputText value="GUID:" />
+		 <h:outputText value="#{record.GUID}" />  
+
+ 		 <h:outputText value="url:" />
+		 <h:outputText value="#{record.url}" />  
+					
+ 		 <h:outputText value="Authority:" />
+		 <h:outputText value="#{record.authority}" />  
+
+ 		 <h:outputText value="Rank:" />
+		 <h:outputText value="#{record.rank}" />  
+
+ 		 <h:outputText value="Status:" />
+		 <h:outputText value="#{record.status}" />  
+
+ 		 <h:outputText value="Valid GUID:" />
+		 <h:outputText value="#{record.valid_guid}" />  
+
+ 		 <h:outputText value="Valid Name:" />
+		 <h:outputText value="#{record.valid_name}" />  
+
+ 		 <h:outputText value="Valid Authority:" />
+		 <h:outputText value="#{record.valid_authority}" />  
+
+ 		 <h:outputText value="Kingdom:" />
+		 <h:outputText value="#{record.kingdom}" />  
+
+ 		 <h:outputText value="Phylum:" />
+		 <h:outputText value="#{record.phylum}" />  
+
+ 		 <h:outputText value="Class:" />
+		 <h:outputText value="#{record._class}" />  
+
+ 		 <h:outputText value="Order:" />
+		 <h:outputText value="#{record.order}" />  
+
+ 		 <h:outputText value="Family:" />
+		 <h:outputText value="#{record.family}" />  
+
+ 		 <h:outputText value="Genus:" />
+		 <h:outputText value="#{record.genus}" />  
+
+ 		 <h:outputText value="Citation:" />
+		 <h:outputText value="#{record.citation}" />  
+
+ 		 <h:outputText value="Match Type:" />
+		 <h:outputText value="#{record.match_type}" />  
+
+	    </h:panelGrid>
+	
+	   </rich:collapsiblePanel>
+	</a4j:repeat>
+
+    <br/>
+	<h:commandButton value="New Search" immediate="true" action="#{taxoBean.startSearch}"/> 
+	
+</ui:composition>

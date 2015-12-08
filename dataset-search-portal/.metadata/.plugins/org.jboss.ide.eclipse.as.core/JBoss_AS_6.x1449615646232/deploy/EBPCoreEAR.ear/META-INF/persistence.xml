@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" 
+	xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	
+	 	  <persistence-unit name="EBPCoreJPA">
+ 	   		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+			<jta-data-source>java:/PostgresDSEBP</jta-data-source>
+			<jar-file>EBPCoreJPA.jar</jar-file>
+			
+		<class>com.ibm.gbs.tramitator.jpa.entity.Configuracion</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.Category</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.Content</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.Country</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.EbvClass</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.EbvProvider</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.EbvVar</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.Function</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.FunctionProvider</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.Provider</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.Request</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.ServiceType</class>
+		<class>com.ibm.gbs.eubon.ebp.core.jpa.entity.UserRequest</class>
+		
+			
+			<properties>
+			 <property name="hibernate.show_sql" value="true"/>
+         	 <property name="hibernate.format_sql" value="false"/>
+			</properties>
+		</persistence-unit>
+</persistence>

@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	
+	<p class="formulario_t1">DataSet Result Data</p>
+	
+	<h:panelGrid styleClass="tablaCampos" id="content" cellspacing="0" columnClasses="colStyle111,colStyle112,colStyle111,colStyle112,colStyle111,colStyle112" columns="6" >
+		<h:outputText value="Total Records:" />
+		<h:outputText value="#{dataSetBean.searchResult.count}" />  
+		<h:outputText value="Records Retrieved:" />
+		<h:outputText value="#{dataSetBean.searchResult.limit}" />
+		<h:outputText value="Offset:" />
+		<h:outputText value="#{dataSetBean.searchResult.offset}" />  
+	</h:panelGrid>
+	
+    <br/>        	
+    <h:commandButton value="New Search" immediate="true" action="#{dataSetBean.startSearch}"/>
+    <h:commandButton value="Prev Results" immediate="true" action="#{dataSetBean.dataSetSearchPrev}"/>
+	<h:commandButton value="Next Results" immediate="true" action="#{dataSetBean.dataSetSearchNext}"/>
+        
+        	<ui:include src="dataSetRowList.xhtml"></ui:include>
+	<br/>
+	
+	<h:commandButton value="New Search" immediate="true" action="#{dataSetBean.startSearch}"/> 
+
+</ui:composition>

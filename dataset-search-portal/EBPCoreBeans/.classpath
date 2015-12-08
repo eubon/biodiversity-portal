@@ -6,11 +6,11 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/axis.jar"/>
-	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/commons-discovery-0.2.jar"/>
-	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/javax.wsdl_1.6.2.v201012040545.jar"/>
-	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/jaxrpc.jar"/>
-	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/json-simple-1.1.1.jar"/>
-	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/saaj.jar"/>
+	<classpathentry kind="lib" path="/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/libs/axis.jar"/>
+	<classpathentry kind="lib" path="/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/libs/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/libs/javax.wsdl_1.6.2.v201012040545.jar"/>
+	<classpathentry kind="lib" path="/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/libs/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/libs/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/libs/saaj.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

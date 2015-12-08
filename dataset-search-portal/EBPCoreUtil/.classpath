@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="/EBPCoreEAR/EarContent/expiringcache.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EBPCoreBeans"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EBPCoreJPA"/>
+	<classpathentry kind="lib" path="/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/libs/log4j-1.2.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

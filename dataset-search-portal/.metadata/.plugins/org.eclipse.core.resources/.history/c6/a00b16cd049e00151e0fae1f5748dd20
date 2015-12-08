@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+          version="2.0">
+	<application>
+
+
+	</application>
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		
+		<!-- Taxonomic Search-->
+		<navigation-case>
+			<from-outcome>taxSearch</from-outcome>
+			<to-view-id>/taxonomic/taxSearch.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>taxResult</from-outcome>
+			<to-view-id>/taxonomic/taxResult.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>taxRecords</from-outcome>
+			<to-view-id>/taxonomic/taxRecords.xhtml</to-view-id>
+		</navigation-case>		
+		<navigation-case>
+			<from-outcome>taxVernaculars</from-outcome>
+			<to-view-id>/taxonomic/taxVernaculars.xhtml</to-view-id>
+		</navigation-case>		
+		
+		<!-- DataSet Search-->
+		<navigation-case>
+			<from-outcome>dataSetSearch</from-outcome>
+			<to-view-id>/dataSet/dataSetSearch.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dataSetResult</from-outcome>
+			<to-view-id>/dataSet/dataSetResult.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dataSetResultRow</from-outcome>
+			<to-view-id>/dataSet/dataSetResultRow.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dataSetDetail</from-outcome>
+			<to-view-id>/dataSet/dataSetDetail.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dataSetOrganizationDetail</from-outcome>
+			<to-view-id>/dataSet/organizationDetail.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>dataSetCSWResultRow</from-outcome>
+			<to-view-id>/dataSet/dataSetCSWResultRow.xhtml</to-view-id>
+		</navigation-case>
+		
+		<!-- Ocurrences Search-->
+		<navigation-case>
+			<from-outcome>ocurrencesSearch</from-outcome>
+			<to-view-id>/ocurrences/ocurrencesSearch.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ocurrencesResult</from-outcome>
+			<to-view-id>/ocurrences/ocurrencesResult.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ocurrencesResultRow</from-outcome>
+			<to-view-id>/ocurrences/ocurrencesResultRow.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ocurrencesDetail</from-outcome>
+			<to-view-id>/ocurrences/ocurrencesDetail.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ocurrencesOrganizationDetail</from-outcome>
+			<to-view-id>/ocurrences/organizationDetail.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>ocurrencesDataSetDetail</from-outcome>
+			<to-view-id>/ocurrences/dataSetDetail.xhtml</to-view-id>
+		</navigation-case>
+
+
+<!-- Species Search-->
+		<navigation-case>
+			<from-outcome>speciesSearch</from-outcome>
+			<to-view-id>/species/speciesSearch.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>speciesResult</from-outcome>
+			<to-view-id>/species/speciesResult.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>speciesResultRow</from-outcome>
+			<to-view-id>/species/speciesResultRow.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>speciesDetail</from-outcome>
+			<to-view-id>/species/speciesDetail.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>speciesDataSetDetail</from-outcome>
+			<to-view-id>/species/dataSetDetail.xhtml</to-view-id>
+		</navigation-case>
+		
+		
+		<!-- Organization Search -->
+		<navigation-case>
+			<from-outcome>organizationDetail</from-outcome>
+			<to-view-id>/organization/organizationDetail.xhtml</to-view-id>
+		</navigation-case>
+
+		
+		<navigation-case>
+			<from-outcome>pruebaCache</from-outcome>
+			<to-view-id>/secure/cache/main.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>seguridad</from-outcome>
+			<to-view-id>/secure/seguridad/main.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>variablesConfiguracion</from-outcome>
+			<to-view-id>/secure/admin/variablesConfiguracion.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>panelControl</from-outcome>
+			<to-view-id>/secure/admin/panelControl.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>mensaje</from-outcome>
+			<to-view-id>/secure/varios/mensaje.xhtml</to-view-id>
+		</navigation-case>
+		
+		
+
+		<!-- Administración Category -->
+		<navigation-case>
+			<from-outcome>consultCategory</from-outcome>
+			<to-view-id>/secure/category/consultCategory.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listCategories</from-outcome>
+			<to-view-id>/secure/category/category.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editCategory</from-outcome>
+			<to-view-id>/secure/category/editCategory.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>newCategory</from-outcome>
+			<to-view-id>/secure/category/newCategory.xhtml
+			</to-view-id>
+		</navigation-case>
+
+<!-- Administración Content -->
+		<navigation-case>
+			<from-outcome>consultContent</from-outcome>
+			<to-view-id>/secure/content/consultContent.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listContents</from-outcome>
+			<to-view-id>/secure/content/content.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editContent</from-outcome>
+			<to-view-id>/secure/content/editContent.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>newContent</from-outcome>
+			<to-view-id>/secure/content/newContent.xhtml
+			</to-view-id>
+		</navigation-case>
+
+<!-- Administración Provider -->
+		<navigation-case>
+			<from-outcome>consultProvider</from-outcome>
+			<to-view-id>/secure/provider/consultProvider.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listProviders</from-outcome>
+			<to-view-id>/secure/provider/provider.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editProvider</from-outcome>
+			<to-view-id>/secure/provider/editProvider.xhtml
+			</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>newProvider</from-outcome>
+			<to-view-id>/secure/provider/newProvider.xhtml
+			</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>homePublic</from-outcome>
+			<to-view-id>/mainPublic.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</navigation-rule>
+
+</faces-config>

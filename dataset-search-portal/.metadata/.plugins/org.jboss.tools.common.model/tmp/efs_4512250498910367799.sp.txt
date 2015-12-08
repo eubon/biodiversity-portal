@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="taxSearch::#taxonomic#taxSearch.xhtml"
+    NAME="output" PATH="/taxonomic/taxSearch.xhtml"
+    TARGET="rules:#taxonomic#taxSearch.xhtml" TITLE="taxSearch" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="taxResult::#taxonomic#taxResult.xhtml"
+    NAME="output1" PATH="/taxonomic/taxResult.xhtml"
+    TARGET="rules:#taxonomic#taxResult.xhtml" TITLE="taxResult" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="taxRecords::#taxonomic#taxRecords.xhtml"
+    NAME="output2" PATH="/taxonomic/taxRecords.xhtml"
+    TARGET="rules:#taxonomic#taxRecords.xhtml" TITLE="taxRecords" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="taxVernaculars::#taxonomic#taxVernaculars.xhtml" NAME="output3"
+    PATH="/taxonomic/taxVernaculars.xhtml"
+    TARGET="rules:#taxonomic#taxVernaculars.xhtml"
+    TITLE="taxVernaculars" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="dataSetSearch::#dataSet#dataSetSearch.xhtml"
+    NAME="output4" PATH="/dataSet/dataSetSearch.xhtml"
+    TARGET="rules:#dataSet#dataSetSearch.xhtml" TITLE="dataSetSearch" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="dataSetResult::#dataSet#dataSetResult.xhtml"
+    NAME="output5" PATH="/dataSet/dataSetResult.xhtml"
+    TARGET="rules:#dataSet#dataSetResult.xhtml" TITLE="dataSetResult" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dataSetResultRow::#dataSet#dataSetResultRow.xhtml"
+    NAME="output6" PATH="/dataSet/dataSetResultRow.xhtml"
+    TARGET="rules:#dataSet#dataSetResultRow.xhtml"
+    TITLE="dataSetResultRow" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="dataSetDetail::#dataSet#dataSetDetail.xhtml"
+    NAME="output7" PATH="/dataSet/dataSetDetail.xhtml"
+    TARGET="rules:#dataSet#dataSetDetail.xhtml" TITLE="dataSetDetail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dataSetOrganizationDetail::#dataSet#organizationDetail.xhtml"
+    NAME="output8" PATH="/dataSet/organizationDetail.xhtml"
+    TARGET="rules:#dataSet#organizationDetail.xhtml"
+    TITLE="dataSetOrganizationDetail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="dataSetCSWResultRow::#dataSet#dataSetCSWResultRow.xhtml"
+    NAME="output9" PATH="/dataSet/dataSetCSWResultRow.xhtml"
+    TARGET="rules:#dataSet#dataSetCSWResultRow.xhtml"
+    TITLE="dataSetCSWResultRow" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ocurrencesSearch::#ocurrences#ocurrencesSearch.xhtml"
+    NAME="output10" PATH="/ocurrences/ocurrencesSearch.xhtml"
+    TARGET="rules:#ocurrences#ocurrencesSearch.xhtml"
+    TITLE="ocurrencesSearch" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ocurrencesResult::#ocurrences#ocurrencesResult.xhtml"
+    NAME="output11" PATH="/ocurrences/ocurrencesResult.xhtml"
+    TARGET="rules:#ocurrences#ocurrencesResult.xhtml"
+    TITLE="ocurrencesResult" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ocurrencesResultRow::#ocurrences#ocurrencesResultRow.xhtml"
+    NAME="output12" PATH="/ocurrences/ocurrencesResultRow.xhtml"
+    TARGET="rules:#ocurrences#ocurrencesResultRow.xhtml"
+    TITLE="ocurrencesResultRow" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ocurrencesDetail::#ocurrences#ocurrencesDetail.xhtml"
+    NAME="output13" PATH="/ocurrences/ocurrencesDetail.xhtml"
+    TARGET="rules:#ocurrences#ocurrencesDetail.xhtml"
+    TITLE="ocurrencesDetail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ocurrencesOrganizationDetail::#ocurrences#organizationDetail.xhtml"
+    NAME="output14" PATH="/ocurrences/organizationDetail.xhtml"
+    TARGET="rules:#ocurrences#organizationDetail.xhtml"
+    TITLE="ocurrencesOrganizationDetail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="ocurrencesDataSetDetail::#ocurrences#dataSetDetail.xhtml"
+    NAME="output15" PATH="/ocurrences/dataSetDetail.xhtml"
+    TARGET="rules:#ocurrences#dataSetDetail.xhtml"
+    TITLE="ocurrencesDataSetDetail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="speciesSearch::#species#speciesSearch.xhtml"
+    NAME="output16" PATH="/species/speciesSearch.xhtml"
+    TARGET="rules:#species#speciesSearch.xhtml" TITLE="speciesSearch" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="speciesResult::#species#speciesResult.xhtml"
+    NAME="output17" PATH="/species/speciesResult.xhtml"
+    TARGET="rules:#species#speciesResult.xhtml" TITLE="speciesResult" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="speciesResultRow::#species#speciesResultRow.xhtml"
+    NAME="output18" PATH="/species/speciesResultRow.xhtml"
+    TARGET="rules:#species#speciesResultRow.xhtml"
+    TITLE="speciesResultRow" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="speciesDetail::#species#speciesDetail.xhtml"
+    NAME="output19" PATH="/species/speciesDetail.xhtml"
+    TARGET="rules:#species#speciesDetail.xhtml" TITLE="speciesDetail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="speciesDataSetDetail::#species#dataSetDetail.xhtml"
+    NAME="output20" PATH="/species/dataSetDetail.xhtml"
+    TARGET="rules:#species#dataSetDetail.xhtml"
+    TITLE="speciesDataSetDetail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="organizationDetail::#organization#organizationDetail.xhtml"
+    NAME="output21" PATH="/organization/organizationDetail.xhtml"
+    TARGET="rules:#organization#organizationDetail.xhtml"
+    TITLE="organizationDetail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="pruebaCache::#secure#cache#main.xhtml"
+    NAME="output22" PATH="/secure/cache/main.xhtml"
+    TARGET="rules:#secure#cache#main.xhtml" TITLE="pruebaCache" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="seguridad::#secure#seguridad#main.xhtml"
+    NAME="output23" PATH="/secure/seguridad/main.xhtml"
+    TARGET="rules:#secure#seguridad#main.xhtml" TITLE="seguridad" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="variablesConfiguracion::#secure#admin#variablesConfiguracion.xhtml"
+    NAME="output24" PATH="/secure/admin/variablesConfiguracion.xhtml"
+    TARGET="rules:#secure#admin#variablesConfiguracion.xhtml"
+    TITLE="variablesConfiguracion" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="panelControl::#secure#admin#panelControl.xhtml" NAME="output25"
+    PATH="/secure/admin/panelControl.xhtml"
+    TARGET="rules:#secure#admin#panelControl.xhtml" TITLE="panelControl" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="mensaje::#secure#varios#mensaje.xhtml"
+    NAME="output26" PATH="/secure/varios/mensaje.xhtml"
+    TARGET="rules:#secure#varios#mensaje.xhtml" TITLE="mensaje" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultCategory::#secure#category#consultCategory.xhtml"
+    NAME="output27" PATH="/secure/category/consultCategory.xhtml"
+    TARGET="rules:#secure#category#consultCategory.xhtml"
+    TITLE="consultCategory" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listCategories::#secure#category#category.xhtml" NAME="output28"
+    PATH="/secure/category/category.xhtml"
+    TARGET="rules:#secure#category#category.xhtml"
+    TITLE="listCategories" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="editCategory::#secure#category#editCategory.xhtml"
+    NAME="output29" PATH="/secure/category/editCategory.xhtml"
+    TARGET="rules:#secure#category#editCategory.xhtml"
+    TITLE="editCategory" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="newCategory::#secure#category#newCategory.xhtml" NAME="output30"
+    PATH="/secure/category/newCategory.xhtml"
+    TARGET="rules:#secure#category#newCategory.xhtml"
+    TITLE="newCategory" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultContent::#secure#content#consultContent.xhtml"
+    NAME="output31" PATH="/secure/content/consultContent.xhtml"
+    TARGET="rules:#secure#content#consultContent.xhtml"
+    TITLE="consultContent" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listContents::#secure#content#content.xhtml"
+    NAME="output32" PATH="/secure/content/content.xhtml"
+    TARGET="rules:#secure#content#content.xhtml" TITLE="listContents" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="editContent::#secure#content#editContent.xhtml" NAME="output33"
+    PATH="/secure/content/editContent.xhtml"
+    TARGET="rules:#secure#content#editContent.xhtml" TITLE="editContent" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="newContent::#secure#content#newContent.xhtml" NAME="output34"
+    PATH="/secure/content/newContent.xhtml"
+    TARGET="rules:#secure#content#newContent.xhtml" TITLE="newContent" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="consultProvider::#secure#provider#consultProvider.xhtml"
+    NAME="output35" PATH="/secure/provider/consultProvider.xhtml"
+    TARGET="rules:#secure#provider#consultProvider.xhtml"
+    TITLE="consultProvider" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listProviders::#secure#provider#provider.xhtml" NAME="output36"
+    PATH="/secure/provider/provider.xhtml"
+    TARGET="rules:#secure#provider#provider.xhtml" TITLE="listProviders" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="editProvider::#secure#provider#editProvider.xhtml"
+    NAME="output37" PATH="/secure/provider/editProvider.xhtml"
+    TARGET="rules:#secure#provider#editProvider.xhtml"
+    TITLE="editProvider" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="newProvider::#secure#provider#newProvider.xhtml" NAME="output38"
+    PATH="/secure/provider/newProvider.xhtml"
+    TARGET="rules:#secure#provider#newProvider.xhtml"
+    TITLE="newProvider" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="homePublic::#mainPublic.xhtml"
+    NAME="output39" PATH="/mainPublic.xhtml"
+    TARGET="rules:#mainPublic.xhtml" TITLE="homePublic" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#taxonomic#taxVernaculars.xhtml"
+  PATH="/taxonomic/taxVernaculars.xhtml" SHAPE="304,1617,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#taxonomic#taxResult.xhtml"
+  PATH="/taxonomic/taxResult.xhtml" SHAPE="304,1393,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dataSet#dataSetResultRow.xhtml"
+  PATH="/dataSet/dataSetResultRow.xhtml" SHAPE="304,1953,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#species#speciesResultRow.xhtml"
+  PATH="/species/speciesResultRow.xhtml" SHAPE="304,3297,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#content#content.xhtml"
+  PATH="/secure/content/content.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#provider#consultProvider.xhtml"
+  PATH="/secure/provider/consultProvider.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#provider#editProvider.xhtml"
+  PATH="/secure/provider/editProvider.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#mainPublic.xhtml" PATH="/mainPublic.xhtml"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#admin#variablesConfiguracion.xhtml"
+  PATH="/secure/admin/variablesConfiguracion.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ocurrences#dataSetDetail.xhtml"
+  PATH="/ocurrences/dataSetDetail.xhtml" SHAPE="304,2961,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#species#dataSetDetail.xhtml"
+  PATH="/species/dataSetDetail.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#admin#panelControl.xhtml"
+  PATH="/secure/admin/panelControl.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#category#editCategory.xhtml"
+  PATH="/secure/category/editCategory.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#content#editContent.xhtml"
+  PATH="/secure/content/editContent.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#category#newCategory.xhtml"
+  PATH="/secure/category/newCategory.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dataSet#dataSetCSWResultRow.xhtml"
+  PATH="/dataSet/dataSetCSWResultRow.xhtml" SHAPE="304,2289,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#content#consultContent.xhtml"
+  PATH="/secure/content/consultContent.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dataSet#dataSetSearch.xhtml"
+  PATH="/dataSet/dataSetSearch.xhtml" SHAPE="304,1729,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#varios#mensaje.xhtml"
+  PATH="/secure/varios/mensaje.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dataSet#dataSetDetail.xhtml"
+  PATH="/dataSet/dataSetDetail.xhtml" SHAPE="304,2065,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#category#category.xhtml"
+  PATH="/secure/category/category.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ocurrences#ocurrencesResultRow.xhtml"
+  PATH="/ocurrences/ocurrencesResultRow.xhtml" SHAPE="304,2625,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#organization#organizationDetail.xhtml"
+  PATH="/organization/organizationDetail.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ocurrences#ocurrencesSearch.xhtml"
+  PATH="/ocurrences/ocurrencesSearch.xhtml" SHAPE="304,2401,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#seguridad#main.xhtml"
+  PATH="/secure/seguridad/main.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#species#speciesSearch.xhtml"
+  PATH="/species/speciesSearch.xhtml" SHAPE="304,3073,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ocurrences#organizationDetail.xhtml"
+  PATH="/ocurrences/organizationDetail.xhtml" SHAPE="304,2849,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#species#speciesResult.xhtml"
+  PATH="/species/speciesResult.xhtml" SHAPE="304,3185,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dataSet#organizationDetail.xhtml"
+  PATH="/dataSet/organizationDetail.xhtml" SHAPE="304,2177,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ocurrences#ocurrencesResult.xhtml"
+  PATH="/ocurrences/ocurrencesResult.xhtml" SHAPE="304,2513,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ocurrences#ocurrencesDetail.xhtml"
+  PATH="/ocurrences/ocurrencesDetail.xhtml" SHAPE="304,2737,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#cache#main.xhtml"
+  PATH="/secure/cache/main.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#provider#provider.xhtml"
+  PATH="/secure/provider/provider.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#species#speciesDetail.xhtml"
+  PATH="/species/speciesDetail.xhtml" SHAPE="304,3409,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#content#newContent.xhtml"
+  PATH="/secure/content/newContent.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#dataSet#dataSetResult.xhtml"
+  PATH="/dataSet/dataSetResult.xhtml" SHAPE="304,1841,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#taxonomic#taxSearch.xhtml"
+  PATH="/taxonomic/taxSearch.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#category#consultCategory.xhtml"
+  PATH="/secure/category/consultCategory.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#secure#provider#newProvider.xhtml"
+  PATH="/secure/provider/newProvider.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#taxonomic#taxRecords.xhtml"
+  PATH="/taxonomic/taxRecords.xhtml" SHAPE="304,1505,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

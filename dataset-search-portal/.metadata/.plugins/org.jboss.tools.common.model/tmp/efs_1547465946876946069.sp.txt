@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:map="http://code.google.com/p/gmaps4jsf/">
+<f:view contentType="text/html">
+<h:head>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/infobubble.js"/>
+    <style type="text/css">
+    	.ui-dashboard-column > div{
+			margin: 3px;
+			width: 96%;
+		}
+		#initForm div.ui-dashboard-column{ 
+			max-width: 25%;
+			min-width: 5%;
+			width: 25%;
+		}
+		
+		#initForm div.ui-dashboard-column:first-child+div{
+			max-width: 88%;
+			width: 50%;
+			min-width: 50%;
+		}
+		
+		#initForm div.ui-dashboard-column+div+div{ 
+			max-width: 25%;
+			min-width: 5%;
+			width: 25%;
+			float: right;
+		}
+		
+		#initForm div.ui-dashboard-column:first-child + div > div {
+    		margin-left: auto;
+    		margin-right: auto;
+		}
+		
+	</style>
+<title>European Biodiversity Portal - EUBON</title>
+<h:outputStylesheet library="css" name="application.css"/>
+<h:outputScript library="js" name="map.js"/>
+<ui:insert name="head"/>
+</h:head>
+<h:body>
+    <div id="page">
+        <div id="header">
+            <div class="right-controls">
+                <ul class="top-links layout">
+                </ul>
+            </div>
+            <div class="title">
+		        <img border="0" src="#{facesContext.externalContext.requestContextPath}/images/eubon.jpg" alt="European Biodiversity Portal" title="European Biodiversity Portal"/>
+		        European Biodiversity Portal
+            </div>
+            <div class="texto-usuario">
+            	<h:outputText rendered="#{loginBean.user!=null}" value="Usuario: #{loginBean.user}"/>
+            </div>            
+        </div>
+        
+		<script type="text/javascript">
+			
+			var rectangle;
+			var percentageToGrow = 50;
+
+			var startToggle = 0;
+			var sitesLocToggle = 0;
+			var contentToggle = 0;
+			var newsToggle = 0;
+			
+			function reorderDashboard(panelID){
+				var dashBoard = $('div[id="initForm:board"]');
+				var childrenPanels = dashBoard.children();
+				
+				var leftColumn = dashBoard.children().eq(0);
+				var widthLeftColumn = Math.floor(100 * parseFloat(leftColumn.css('width')) / parseFloat(leftColumn.parent().css('width')));
+				if(widthLeftColumn == 4 || widthLeftColumn == 6){
+					widthLeftColumn = 5;
+				}
+				var middleColumn = dashBoard.children().eq(1);
+				var widthMiddleColumn = Math.floor(100 * parseFloat(middleColumn.css('width')) / parseFloat(middleColumn.parent().css('width')));
+				if(widthMiddleColumn == 68 || widthMiddleColumn == 70){
+					widthMiddleColumn = 69;
+				}
+				if(widthMiddleColumn == 87 || widthMiddleColumn == 89){
+					widthMiddleColumn = 88;
+				}
+				var rightColumn = dashBoard.children().eq(2);
+				var widthRightColumn = Math.floor(100 * parseFloat(rightColumn.css('width')) / parseFloat(rightColumn.parent().css('width')));
+				if(widthRightColumn == 4 || widthRightColumn == 6){
+					widthRightColumn = 5;
+				}
+
+				if(leftColumn.children().length == 0 &amp;&amp; widthLeftColumn == 25){
+					leftColumn.css('width', '5%');
+					widthMiddleColumn = widthMiddleColumn + 19;
+				}
+				if(rightColumn.children().length == 0 &amp;&amp; widthRightColumn == 25){
+					rightColumn.css('width', '5%');
+					widthMiddleColumn = widthMiddleColumn + 19;
+					
+				}
+				if(leftColumn.children().length &gt; 0 &amp;&amp; widthLeftColumn == 5){
+					leftColumn.css('width', '25%');
+					widthMiddleColumn = widthMiddleColumn - 19;
+				}
+				if(rightColumn.children().length &gt; 0 &amp;&amp; widthRightColumn == 5){
+					rightColumn.css('width', '25%');
+					widthMiddleColumn = widthMiddleColumn - 19;
+				}
+
+				
+				middleColumn.css('width', widthMiddleColumn+'%');
+				
+			}
+			
+			function resizeDashboard(panelID){
+				var toggleAction = 0;
+				if(panelID == 'start'){
+					if (startToggle == 0){
+						startToggle = 1;
+					}
+					else{
+						startToggle = 0;
+					}
+					toggleAction = startToggle;
+				}
+				else if(panelID == 'sitesLoc'){
+					if (sitesLocToggle == 0){
+						sitesLocToggle = 1;
+					}
+					else{
+						sitesLocToggle = 0;
+					}
+					toggleAction = sitesLocToggle;
+				}
+				else if(panelID == 'content'){
+					if (contentToggle == 0){
+						contentToggle = 1;
+					}
+					else{
+						contentToggle = 0;
+					}
+					toggleAction = contentToggle;
+				}
+				else if(panelID == 'news'){
+					if (newsToggle == 0){
+						newsToggle = 1;
+					}
+					else{
+						newsToggle = 0;
+					}
+					toggleAction = newsToggle;
+				}
+				
+				//se obtiene una variable para manejar la columna a la que pertenece el panel toggleado
+				var panel = $('div[id="initForm:'+panelID+'"]');
+				var parentPanelID = $('div[id="initForm:'+panelID+'"]').parent();
+				var dashBoard = $('div[id="initForm:board"]');
+				var middleColumn = dashBoard.children().eq(1);
+				//Si la columna toggleada no es la columna de enmedio
+				if(dashBoard.children().index(parentPanelID)!=1){
+					if(parentPanelID.children().length == 1){
+						//Si la columna no tiene más que un hijo, el toggleado
+						var percentageToGrowInString = percentageToGrow + '%';
+						if(toggleAction == 0){
+							//Se expandió, disminuir el tamaño de la columna de enmedio
+							percentageToGrow = percentageToGrow - 19;
+							percentageToGrowInString = percentageToGrow + '%';
+						}
+						else{
+							//Se minimizó, aumentar el tamaño de la columna de enmedio
+							percentageToGrow = percentageToGrow + 19;
+							percentageToGrowInString = percentageToGrow + '%';
+						}
+						middleColumn.css('width', percentageToGrowInString);
+						middleColumn.css('max-width', percentageToGrowInString);
+					}
+					else{
+						//Si la columna tiene más de un hijo
+						//Comprobar el estado toggleado de todos sus hijos
+						var childrenPanels = parentPanelID.children();
+						var numPanelsNoToggleState = childrenPanels.length;
+						for(var i=0; i &lt; childrenPanels.length; i++){
+							if(childrenPanels[i].id == 'initForm:start'){
+								numPanelsNoToggleState = numPanelsNoToggleState - startToggle;
+							}
+							else if(childrenPanels[i].id == 'initForm:sitesLoc'){
+								numPanelsNoToggleState = numPanelsNoToggleState - sitesLocToggle;
+							}
+							else if(childrenPanels[i].id == 'initForm:content'){
+								numPanelsNoToggleState = numPanelsNoToggleState - contentToggle;
+							}
+							else if(childrenPanels[i].id == 'initForm:news'){
+								numPanelsNoToggleState = numPanelsNoToggleState - newsToggle;
+							}
+						}
+
+						var percentageToGrowInString = percentageToGrow + '%';
+						if(numPanelsNoToggleState == 0){
+							//El resto de paneles de la columna están minimizados
+							//Se minimizó, aumentar el tamaño de la columna de enmedio
+							percentageToGrow = percentageToGrow + 19;
+							percentageToGrowInString = percentageToGrow + '%';
+						}
+						if(numPanelsNoToggleState == 1 &amp;&amp; toggleAction == 0){
+							//La acción realizada ha sido maximizar un panel cuando el resto estaban minimizados
+							//Se expandió, disminuir el tamaño de la columna de enmedio
+							percentageToGrow = percentageToGrow - 19;
+							percentageToGrowInString = percentageToGrow + '%';
+						}
+						middleColumn.css('width', percentageToGrowInString);
+						middleColumn.css('max-width', percentageToGrowInString);
+					}
+				}
+				if(toggleAction == 0){
+					panel.css('width', '96%');
+				}
+			}
+
+			function GetRectangleControl(controlDiv, map){
+				controlDiv.style.padding = "5px";
+
+				var controlUI = document.createElement("div");
+				controlUI.style.backgroundColor = "white";
+				controlUI.style.borderStyle = "solid";
+				controlUI.style.borderWidth = "2px";
+				controlUI.style.cursor = "pointer";
+				controlUI.style.textAlign = "center";
+				controlUI.title = "Click para ajustar al area seleccionada";
+				controlDiv.appendChild(controlUI);
+
+				var controlText = document.createElement("div");
+				controlText.style.fontFamily = "Arial,sans-serif";
+				controlText.style.fontSize = "12px";
+				controlText.style.paddingLeft = "4px";
+				controlText.style.paddingRight = "4px";
+				controlText.innerHTML = "&lt;b&gt;Ajustar&lt;/b&gt;";
+				controlUI.appendChild(controlText);
+
+				google.maps.event.addDomListener(controlUI, 'click', function() {
+					map.fitBounds(rectangle.getBounds());
+					map.panToBounds(rectangle.getBounds())
+				});
+			}
+			
+			
+		</script>
+		
+        <div id="page-content">
+            <div>
+				<ui:insert name="body">
+				<h:form id="initForm">
+					<div id="board" >  
+						
+				        <h:panelGrid id="start" header="Start" >
+				        	
+				        	<div> 
+					            Click here to start:  
+								<h:outputLink value="#{facesContext.externalContext.requestContextPath}/secure/home.jsf">
+									<h:outputText value="login" />
+								</h:outputLink>
+							</div>  
+				        </h:panelGrid>  
+				  
+				        <h:panelGrid id="sitesLoc" header="Sites locator">
+				            <div id="mapdiv" style="height: 400px;"></div>
+				        </h:panelGrid>  
+				  
+				        <h:panelGrid id="content" header="Content" >
+				        	<div>
+				        		<ul>
+				        			<li>  
+				            			<h:outputText value="About us" />
+				            		</li>
+				            		<li>  
+				            			<h:outputText value="EBP" />
+				            		</li>
+				            		<li> 
+				            			<h:outputLink value="www.eubon.eu/‎" target="_blank">
+											<h:outputText value="EUBON" />
+										</h:outputLink> 
+				            		</li>
+				           		</ul>
+				            </div>  
+				        </h:panelGrid>
+				        <h:panelGrid id="news" header="News" >
+				        	
+				        	<div>
+				        	  <ul>
+				        			<li>
+				        				<h:outputLink value="http://www.antena3.com/especiales/noticias/ciencia/hazte-eco/noticias/onu-aboga-planificacion-eficiente-ciudades-favor-biodiversidad_2012101600048.html">
+											<h:outputText value="La ONU aboga por una planificación eficiente de las ciudades a favor de la biodiversidad" />
+										</h:outputLink>
+				            		</li>
+				            		<li>
+				        				<h:outputLink value="http://www.guardian.co.uk/environment/2013/may/02/greater-mekong-forest-cover">
+											<h:outputText value="Greater Mekong countries 'lost one-third of forest cover in 40 years'" />
+										</h:outputLink>
+				            		</li>
+				            		<li>
+				        				<h:outputLink value="http://ccaa.elpais.com/ccaa/2013/05/10/catalunya/1368215914_568232.html">
+											<h:outputText value="El despertar de los osos del Pirineo" />
+										</h:outputLink>
+				            		</li>
+				            		<li>
+				        				<h:outputLink value="http://www.antena3.com/especiales/noticias/ciencia/hazte-eco/noticias/biodiversidad-mitad-areas-tropicales-protegidas-esta-peligro_2012072600082.html">
+											<h:outputText value="La biodiversidad de la mitad de las áreas tropicales protegidas está en peligro" />
+										</h:outputLink>
+				            		</li>
+				           		</ul>
+				           	 </div>
+				        </h:panelGrid>  
+				    </div>  
+				</h:form>	
+				</ui:insert>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="footer">
+				EUBON &bull; European Biodiversity Portal &copy; 2014 - 2015 
+        </div>
+    </div>
+</h:body> 
+</f:view>
+</html>

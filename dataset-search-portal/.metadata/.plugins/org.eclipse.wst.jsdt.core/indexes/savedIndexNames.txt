@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1918639880.index
+3134175516.index
+1540524814.index
+3080901064.index
+538644819.index
+3708571295.index

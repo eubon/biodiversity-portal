@@ -13,6 +13,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/EBPCoreBeans"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EBPCoreUtil"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/EBPCoreDAO"/>
-	<classpathentry kind="lib" path="D:/workspaces/eclipse/ibm-final/libs/javax.mail.jar"/>
+	<classpathentry kind="lib" path="/Users/fcoantonio/workspaces/eubon/biodiversity-portal/dataset-search-portal/libs/javax.mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

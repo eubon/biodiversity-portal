@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+
+
+<p class="formulario_t2"><h:outputText value="#{ocurrencesBean.row.taxon.taxonKey}: #{ocurrencesBean.row.taxon.scientificName}, #{ocurrencesBean.row.taxon.genericName}" /></p>
+
+	<h:panelGrid styleClass="tablaCampos"  cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+		<h:outputText value="Scientific Name:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.scientificName}" />		
+		<h:outputText value="Generic Name:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.genericName}" />		
+
+		<h:outputText value="Kingdom:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.kingdomKey}: #{ocurrencesBean.row.taxon.kingdom}" />
+		<h:outputText value="Phylum:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.phylumKey}: #{ocurrencesBean.row.taxon.phylum}" />
+		<h:outputText value="Class:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.classKey}: #{ocurrencesBean.row.ocurrenceClass}" />
+		<h:outputText value="Order:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.orderKey}: #{ocurrencesBean.row.taxon.order}" />
+		<h:outputText value="Family:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.familyKey}: #{ocurrencesBean.row.taxon.family}" />
+		<h:outputText value="Genus:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.genusKey}: #{ocurrencesBean.row.taxon.genus}" />
+		<h:outputText value="Species:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.speciesKey}: #{ocurrencesBean.row.taxon.species}" />		
+
+		<h:outputText value="Specific Epithet:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.specificEpithet}" />		
+		<h:outputText value="Taxon Rank:" />
+		<h:outputText value="#{ocurrencesBean.row.taxon.taxonRank}" />		
+
+		</h:panelGrid>	
+</ui:composition>

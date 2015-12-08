@@ -1,0 +1,49 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+	
+	
+	<p class="formulario_t1">Content Data</p>
+
+	<h:panelGrid styleClass="tablaCampos" id="content" cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+					
+		<h:outputText value="Id:" />
+		<h:outputText value="#{contentBean.content.id}" />  
+
+		<h:outputText value="Title:" />
+		<h:outputText value="#{contentBean.content.title}" />
+
+		<h:outputText value="Description:" />
+		<h:outputText value="#{contentBean.content.description}" />
+
+		<h:outputText value="Publish Date:" />
+		<h:outputText value="#{contentBean.content.publishDate}" />
+
+		<h:outputText value="Link:" />
+		<h:outputText value="#{contentBean.content.link}" />
+		
+		<h:outputText value="Category:" />
+		<h:outputText value="#{contentBean.content.category.name}" />
+		
+		<h:outputText value="Publish:" />
+		<c:choose>
+			<c:when test="#{contentBean.content.flgPublish == true}">
+				<h:outputText value="Yes" />
+			</c:when>
+			<c:when test="#{contentBean.content.flgPublish == false}">
+				<h:outputText value="No" />
+			</c:when>
+		</c:choose>
+
+	</h:panelGrid>
+    <br/>
+	<h:commandButton value="Edit" action="#{contentBean.edit}"/>&#160;&#160;
+	<h:commandButton value="Delete" action="#{contentBean.delete}"/>&#160;&#160;
+	<h:commandButton value="Back" immediate="true" action="#{contentBean.listContents}"/> 
+	
+</ui:composition>

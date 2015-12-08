@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<!-- KSADJFLKSAJDFJSADFÑLKJSADLKFJSALKFDJSALKDJFÑLSADF -->
+
+<a4j:repeat value="#{tags}" var="mTag" rows="50" id="repeatTags">
+
+<p class="formulario_t2"><h:outputText value="#{mTags.key} : #{mTag.name}"/></p>
+<rich:panel>
+	<h:panelGrid styleClass="tablaCampos"  cellspacing="0" columnClasses="colStyle1,colStyle2" columns="2" >
+		<h:outputText value="Key:" />
+		<h:outputText value="#{mTag.key}" />  
+	
+        <h:outputText value="Created By:" />
+		<h:outputText value="#{mTag.createdBy}" />	
+		
+		<h:outputText value="Created:" />
+		<h:outputText value="#{mTag.created}" />	
+    </h:panelGrid>
+     
+        
+
+	</rich:panel>
+</a4j:repeat>
+</ui:composition>
